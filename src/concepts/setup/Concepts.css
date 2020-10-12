@@ -1,0 +1,13 @@
+.concepts {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.conceptblock {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+}

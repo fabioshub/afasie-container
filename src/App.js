@@ -1,13 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  Route,
+  BrowserRouter as Router,
+  Link,
+  useRouteMatch,
+} from 'react-router-dom';
+import StartScreen from './StartScreen';
+import Concepts from './concepts/setup/Concepts';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Afasie-training.nl
-      </header>
+      <Router>
+        <Route exact path="/concepts" component={Concepts} />
+        <Route exact path="/" component={StartScreen} />
+      </Router>
     </div>
   );
 }
