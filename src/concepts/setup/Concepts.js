@@ -1,14 +1,14 @@
 import React from 'react';
 import './Concepts.css';
 
-const concepts = [
+export const concepts = [
     {
         title: 'geluid en klik',
-        href: '/concepts/geluidEnKlik'
+        href: '/concepten/geluid-en-klik'
     },
     {
-        title: 'geluid en klik',
-        href: '/concepts/geluidEnKlik'
+        title: 'gevoel',
+        href: '/concepten/gevoel'
     }
 ];
 
