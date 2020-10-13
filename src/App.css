@@ -2,6 +2,8 @@
   text-align: center;
   overflow-x: hidden;
   height: 100%;
+  font-family: 'Open Sans', sans-serif !important;
+
 }
 
 html {
@@ -21,13 +23,13 @@ a {
 }
 
 .MuiToolbar-regular {
-  height: 47px !important;
-  min-height: 47px !important;
+  height: 55px !important;
+  min-height: 55px !important;
 }
 
 
 .MuiTypography-h6 {
-  font-size: 15px !important;
+  font-size: 13px !important;
   color: rgb(141, 141, 141) !important;
   font-weight: bold !important;
 }
@@ -43,25 +45,39 @@ a {
   }
 }
 
+.MuiAppBar-positionStatic {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+}
+
+.MuiAppBar-root {
+  background-color: #8462AA !important;
+  color: white !important;
+}
+
+.MuiTypography-h6 {
+  color: white !important;
+}
+
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
 .choose {
-  min-height: 80vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+  background-color: #8462AA}
 
 .choose-option {
   width: 200px;
@@ -69,21 +85,20 @@ a {
   height: 100px;
   margin: 10px;
   cursor: pointer;
-  background: rgb(255, 255, 255);
-  box-shadow: 0px 0px 6px 3px rgba(58, 58, 58, 0.068);
+  background-color: white;
+    box-shadow: 0px 0px 6px 3px rgba(58, 58, 58, 0.068);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #636363;
+  color: #8462AA;
   font-weight: bold;
   border-radius: 5px;
-  border-bottom: 4px solid #8462aa;
+  border-bottom: 4px solid rgb(190, 190, 190);
   transition: 0.2s;
 }
 
 .choose-option:hover {
-  background-color: #8462aa;
-  color: white;
+  transform: scale(1.1);
 }
 
 .App-link {
