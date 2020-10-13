@@ -1,9 +1,35 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+html {
+  height: 100vh;
 }
 
 a {
   text-decoration: none;
+}
+
+.MuiAppBar-colorPrimary{
+  background-color: white !important;
+}
+
+.MuiPaper-elevation4 {
+  box-shadow: none !important;
+}
+
+.MuiToolbar-regular {
+  height: 47px !important;
+  min-height: 47px !important;
+}
+
+
+.MuiTypography-h6 {
+  font-size: 15px !important;
+  color: rgb(141, 141, 141) !important;
+  font-weight: bold !important;
 }
 
 .App-logo {
@@ -29,7 +55,7 @@ a {
 }
 
 .choose {
-  height: 100vh;
+  min-height: 80vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
