@@ -80,24 +80,24 @@ export default () => {
       <Container><div className='geluidEnKlik'>
         <Grid container className='grid-row main'>
             <Grid container item className='grid-row'>
-                <Grid item xs={2} className='grid-col' style={{color: checkboxStates[0] ? 'rgb(8, 194, 8)' : 'grey'}}>
+                <Grid item xs={2} className='grid-col' style={{color: checkboxStates[0] ? 'rgb(207, 122, 203)' : 'grey'}}>
                     Goe
                 </Grid>
                 <Grid item xs={1} className='grid-col between'>-</Grid>
-                <Grid item xs={2} className='grid-col' style={{color: checkboxStates[1] ? 'rgb(8, 194, 8)' : 'grey'}}>
+                <Grid item xs={2} className='grid-col' style={{color: checkboxStates[1] ? 'rgb(85, 218, 228)' : 'grey'}}>
                     de
                 </Grid>
                 <Grid item xs={1} className='grid-col between'>-</Grid>
-                <Grid item xs={2} className='grid-col' style={{color: checkboxStates[2] ? 'rgb(8, 194, 8)' : 'grey'}}>
+                <Grid item xs={2} className='grid-col' style={{color: checkboxStates[2] ? 'rgb(76, 218, 72)' : 'grey'}}>
                     mor
                 </Grid>
                 <Grid item xs={1} className='grid-col between'>-</Grid>
-                <Grid item xs={2} className='grid-col' style={{color: checkboxStates[3] ? 'rgb(8, 194, 8)' : 'grey'}}>
+                <Grid item xs={2} className='grid-col' style={{color: checkboxStates[3] ? 'rgb(224, 81, 38)' : 'grey'}}>
                     gen
                 </Grid>
             </Grid>
             <Grid container item className='grid-row'>
-                <Grid item xs={2} className='grid-col'>
+                <Grid item xs={2} className='grid-col o1'>
                     <Checkbox
                         className='checkbox'
                         checked={checkboxStates[0]}
@@ -106,7 +106,7 @@ export default () => {
                     />
                 </Grid>
                 <Grid item xs={1} className='grid-col between'></Grid>
-                <Grid item xs={2} className='grid-col'>
+                <Grid item xs={2} className='grid-col o2'>
                     <Checkbox
                         className='checkbox'
                         checked={checkboxStates[1]}
@@ -114,7 +114,7 @@ export default () => {
                         icon={<RadioButtonUncheckedOutlinedIcon />} checkedIcon={<CheckCircleOutlineOutlinedIcon />} 
                     />                </Grid>
                 <Grid item xs={1} className='grid-col between'></Grid>
-                <Grid item xs={2} className='grid-col'>
+                <Grid item xs={2} className='grid-col o3'>
                     <Checkbox
                         className='checkbox'
                         checked={checkboxStates[2]}
@@ -123,7 +123,7 @@ export default () => {
                         />
                 </Grid>
                 <Grid item xs={1} className='grid-col between'></Grid>
-                <Grid item xs={2} className='grid-col'>
+                <Grid item xs={2} className='grid-col o4'>
                     <Checkbox
                         className='checkbox'
                         checked={checkboxStates[3]}

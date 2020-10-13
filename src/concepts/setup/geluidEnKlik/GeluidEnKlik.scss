@@ -7,9 +7,31 @@
         transform : scale(2);
     }
 
-    .MuiCheckbox-colorSecondary.Mui-checked {
-        color: rgb(8, 194, 8);
+    .grid-col.o4 {
+        .MuiCheckbox-colorSecondary.Mui-checked {
+            color: rgb(224, 81, 38);
+        }
     }
+    
+    .grid-col.o1 {
+        .MuiCheckbox-colorSecondary.Mui-checked {
+            color: rgb(207, 122, 203);
+        }
+    }
+    
+    .grid-col.o2 {
+        .MuiCheckbox-colorSecondary.Mui-checked {
+            color: rgb(85, 218, 228);
+        }
+    }
+    
+    .grid-col.o3 {
+        .MuiCheckbox-colorSecondary.Mui-checked {
+            color: rgb(8, 194, 8);
+        }
+    }
+
+
 }
 
 .grid-row {
@@ -34,6 +56,7 @@
 .grid-col.between {
     font-size: 80px;
     font-weight: bold;
+    color: grey;
 }
 
 .col-active {
@@ -41,4 +64,20 @@
     height: 60px;
     background: red;
     border-radius: 100%;
+}
+
+.col-active.o1 {
+    background: rgb(224, 81, 38);
+}
+
+.col-active.o2 {
+    background: rgb(207, 122, 203);
+}
+
+.col-active.o3 {
+    background: rgb(85, 218, 228);
+}
+
+.col-active.o4 {
+    background: rgb(76, 218, 72);
 }

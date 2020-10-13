@@ -1,8 +1,7 @@
-import React from 'react';
-import css from './Gevoel.css';
-import { RadioGroup, FormLabel, FormControl, FormControlLabel, Radio, Grid } from '@material-ui/core';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { useStyles } from '@material-ui/styles';
+import React, { useState } from 'react';
+import './Gevoel.scss';
+import { RadioGroup, FormControl, FormControlLabel, Radio, Snackbar } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 const RadioGroupCustom = withStyles({
     root: {
@@ -10,6 +9,7 @@ const RadioGroupCustom = withStyles({
         border: 0,
         height: 48,
         padding: '30px',
+        backgroundColor: 'black'
     },
     label: {
         textTransform: 'capitalize',
@@ -30,38 +30,43 @@ const RadioGroupCustom = withStyles({
 
 export default () => {
     const classes = withStyles();
+    const [value, setValue] = React.useState('boos');
 
-    return <div>
-        <FormControl component="fieldset" style={{width: '100%'}}> 
-            <FormLabel component="legend">Vandaag voel ik mij:</FormLabel>
-            <RadioGroupCustom aria-label="mood" name="mood1" className='gevoel-group' classes>
-                <Grid container className='grid-row-gevoel' justify='center'>
-                    <Grid item container xs={3} className='grid-col-gevoel'>
-                        <Grid item className='grid-row-col'>
-                            <i class="far fa-angry"></i>
-                            <FormControlLabel value="boos" control={<Radio />} label="boos" />
-                        </Grid>
-                    </Grid>
-                    <Grid item container xs={2} className='grid-col-gevoel'>
-                        <Grid item className='grid-row-col'>
-                        <i class="far fa-angry"></i>
-                            <FormControlLabel value="onverschillig" control={<Radio />} label="onverschillig" />
-                        </Grid>
-                    </Grid>
-                    <Grid item container xs={2} className='grid-col-gevoel'>
-                        <Grid item className='grid-row-col'>
-                        <i class="far fa-meh"></i>
-                            <FormControlLabel value="verdrietig" control={<Radio />} label="verdrietig" />
-                        </Grid>
-                    </Grid>
-                    <Grid item container xs={2} className='grid-col-gevoel'>
-                        <Grid item className='grid-row-col'>
-                        <i class="far fa-smile"></i>
-                            <FormControlLabel value="blij" control={<Radio />} label="blij" />
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </RadioGroupCustom>
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
+
+    return <div><div className='gevoel-container'>
+        <Snackbar
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'center',
+            }}
+            open={true}
+            message="Hoe voel je je vandaag?"
+        />
+        <FormControl component="fieldset">
+            <RadioGroup aria-label="mood" name="mood1" onChange={handleChange} className='gevoel-group' className='radio-button-container'>
+                <div className='mood-option o1'>
+                    <FormControlLabel value='boos' control={<Radio />} label={<i class="far fa-3x fa-angry"></i>} />
+                </div>
+                <div className='mood-option o2'>
+                    <FormControlLabel value="onverschillig" control={<Radio />} label={<i class="far fa-3x fa-meh"></i>} />
+                </div>
+                <div className='mood-option o3'>
+                    <FormControlLabel value="verdrietig" control={<Radio />} label={<i class="far fa-3x fa-sad-tear"></i>} />
+                </div>
+                <div className='mood-option o4'>
+                    <FormControlLabel value="blij" control={<Radio />} label={<i class="far fa-3x fa-smile"></i>} />
+                </div>
+            </RadioGroup>
         </FormControl>
     </div >
+        <div className="gevoel-text">
+            <h3>Gevoel</h3>
+            <p>Voelt de afasiepatiënt zich minder fijn voor het oefenen begint, dan krijgt de afasiepatiënt wat leukere of makkelijkere oefeningen, zodat er sneller een succeservaring behaald wordt.
+            Voelt de afasiepatiënt zich écht niet gemotiveerd / in staat om vandaag te oefenen, dan is er de mogelijkheid om een oefening / spelletje te doen die wat verder van de standaard oefeningen vandaan staat. Zie dit als een soort energizer, waardoor de afasiepatiënt toch nog iets oefent, maar de nadruk vooral ligt op het motiveren van de afasiepatiënt.
+            </p>
+        </div>
+    </div>
 };

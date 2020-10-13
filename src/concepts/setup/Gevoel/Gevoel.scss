@@ -1,0 +1,53 @@
+.gevoel-container { 
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mood-option {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+    transition: 0.1s;
+    background: rgb(238, 238, 238);
+    border-radius: 5px;
+}
+
+.mood-option:hover {
+    transform: scale(1.1);
+    color: white;
+
+    .MuiIconButton-colorSecondary, .MuiIconButton-colorSecondary.checked {
+        color: white !important;
+    }
+}
+
+.mood-option.o1:hover {
+    background: rgb(207, 62, 17);
+}
+
+.mood-option.o2:hover {
+    background: rgb(207, 122, 203);
+}
+
+.mood-option.o3:hover {
+    background: rgb(85, 218, 228);
+}
+
+.mood-option.o4:hover {
+    background: rgb(76, 218, 72);
+}
+
+.gevoel-text {
+    border-top: 1px solid grey;
+    padding-top: 50px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
