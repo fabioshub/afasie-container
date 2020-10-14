@@ -11,7 +11,11 @@ import { AppBar, Toolbar, IconButton, Button, Typography } from '@material-ui/co
 import StartScreen from './StartScreen';
 import Concepts from './concepts/setup/Concepts';
 import GeluidEnKlik from './concepts/setup/geluidEnKlik/GeluidEnKlik';
+import GeluidEnKlikVideo from './concepts/setup/geluidEnKlik/GeluidEnKlikVideo';
+import GevoelVideo from './concepts/setup/Gevoel/GevoelVideo';
 import Gevoel from './concepts/setup/Gevoel/Gevoel';
+import Mijlpaal from './concepts/setup/Mijlpaal/Mijlpaal';
+import MijlpaalVideo from './concepts/setup/Mijlpaal/MijlpaalVideo';
 
 
 function App() {
@@ -43,8 +47,12 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
+        <Route exact path="/concepten/geluid-en-klik/video" component={GeluidEnKlikVideo} />
         <Route exact path="/concepten/geluid-en-klik" component={GeluidEnKlik} />
+        <Route exact path="/concepten/gevoel/video" component={GevoelVideo} />
         <Route exact path="/concepten/gevoel" component={Gevoel} />
+        <Route exact path="/concepten/mijlpaal" component={Mijlpaal} />
+        <Route exact path="/concepten/mijlpaal/video" component={MijlpaalVideo} />
         <Route exact path="/concepten" component={Concepts} />
         <Route exact path="/" component={StartScreen} />
     </div>

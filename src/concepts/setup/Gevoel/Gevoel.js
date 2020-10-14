@@ -9,7 +9,8 @@ const RadioGroupCustom = withStyles({
         border: 0,
         height: 48,
         padding: '30px',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+        flexDirection: 'row'
     },
     label: {
         textTransform: 'capitalize',
@@ -39,8 +40,8 @@ export default () => {
     return <div><div className='gevoel-container'>
         <Snackbar
             anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
+                vertical: 'bottom',
+                horizontal: 'left',
             }}
             open={true}
             message="Hoe voel je je vandaag?"
@@ -62,11 +63,5 @@ export default () => {
             </RadioGroup>
         </FormControl>
     </div >
-        <div className="gevoel-text">
-            <h3>Gevoel</h3>
-            <p>Voelt de afasiepatiënt zich minder fijn voor het oefenen begint, dan krijgt de afasiepatiënt wat leukere of makkelijkere oefeningen, zodat er sneller een succeservaring behaald wordt.
-            Voelt de afasiepatiënt zich écht niet gemotiveerd / in staat om vandaag te oefenen, dan is er de mogelijkheid om een oefening / spelletje te doen die wat verder van de standaard oefeningen vandaan staat. Zie dit als een soort energizer, waardoor de afasiepatiënt toch nog iets oefent, maar de nadruk vooral ligt op het motiveren van de afasiepatiënt.
-            </p>
-        </div>
     </div>
 };
