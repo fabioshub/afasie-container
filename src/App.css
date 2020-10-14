@@ -74,16 +74,64 @@ a {
   min-height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #8462AA}
+  color: white;
+  background-color: #8462AA;
+}
+
+.choose-container {
+  min-height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.choose-sub {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.choose-sub.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 15%;
+  align-items: flex-start;
+}
+
+.choose-sub.second {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 15%;
+  flex-direction: column;
+}
+
+.choose-sub-concept-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.choose-sub-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  height: 5px;
+  width: 20px;
+}
 
 .choose-option {
   width: 200px;
   font-size: 13px;
   height: 100px;
-  margin: 10px;
+  margin: 10px 0 10px 10px;
   cursor: pointer;
   background-color: white;
     box-shadow: 0px 0px 6px 3px rgba(58, 58, 58, 0.068);
