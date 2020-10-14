@@ -3,8 +3,29 @@
     display: flex;
     align-items: center;
 
+    .geluidEnKlik-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
     .checkbox {
-        transform : scale(2);
+        // transform : scale(1);
+        padding: 0 !important;
+        margin-bottom: -16px;
+    }
+
+    .MuiStepIcon-root.MuiStepIcon-active, .MuiStepIcon-root.MuiStepIcon-completed {
+        color: #2D5485;
+    }
+
+    .MuiCheckbox-colorSecondary {
+        color: rgba(255, 255, 255, 0);
+        transition: 0.1s;
+    }
+
+    .MuiCheckbox-colorSecondary.Mui-checked {
+        color:#2D5485;
     }
 
     .grid-col.o4 {
@@ -64,6 +85,31 @@
     height: 60px;
     background: red;
     border-radius: 100%;
+}
+
+.lettergreep-container {
+    color: black;
+    width: 70px;
+    box-shadow: 0px 3px 10px 5px rgba(54, 54, 54, 0.089);
+    padding: 15px 30px;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 15px;
+    margin-top: 0;
+    border-radius: 3px;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.1s;
+
+    .checkbox {
+        margin-bottom: 10px;
+    }
+}
+
+.lettergreep-container.correct {
+    border: 3px solid #AED28F;
 }
 
 .col-active.o1 {
