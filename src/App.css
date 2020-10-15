@@ -2,7 +2,7 @@
   text-align: center;
   overflow-x: hidden;
   height: 100%;
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Helvetica Light', sans-serif !important;
 
 }
 
@@ -13,6 +13,8 @@ html {
 a {
   text-decoration: none;
 }
+
+
 
 .MuiAppBar-colorPrimary{
   background-color: white !important;
@@ -77,6 +79,7 @@ a {
   justify-content: center;
   align-items: center;
   color: rgb(65, 65, 65);
+  font-family: 'Open Sans';
   background-color: white;
 }
 

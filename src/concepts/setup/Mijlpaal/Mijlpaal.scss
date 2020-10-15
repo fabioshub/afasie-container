@@ -3,3 +3,37 @@
     height: 40px;
     margin: 0 auto;
 }
+
+.mijlpaal-pagina {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.stepper-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+
+    .MuiLinearProgress-barColorPrimary {
+        background-color: #F48B78;
+    }
+
+    .MuiLinearProgress-colorPrimary {
+        background-color: white !important;
+    } 
+}
+
+.stepper-button {
+    margin: 10px !important; 
+    background-color: white !important;
+
+
+
+    .MuiButton-label {
+        font-size: 10px !important;
+    }
+}
