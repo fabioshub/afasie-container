@@ -145,8 +145,8 @@ export default () => {
     return <>
         <Snackbar
             anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: 'top',
+                horizontal: 'center',
             }}
             open={true}
             message="Klik op spatie terwijl je de lettergreep uitspreekt"

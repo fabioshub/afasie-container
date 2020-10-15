@@ -16,6 +16,7 @@ import GevoelVideo from './concepts/setup/Gevoel/GevoelVideo';
 import Gevoel from './concepts/setup/Gevoel/Gevoel';
 import Mijlpaal from './concepts/setup/Mijlpaal/Mijlpaal';
 import MijlpaalVideo from './concepts/setup/Mijlpaal/MijlpaalVideo';
+import { Blij, Boos, G1, G2, G3, G4, Onverschillig, Verdrietig } from './concepts/setup/Gevoel/GevoelsOpties';
 
 
 function App() {
@@ -50,6 +51,10 @@ function App() {
         <Route exact path="/concepten/geluid-en-klik/video" component={GeluidEnKlikVideo} />
         <Route exact path="/concepten/geluid-en-klik" component={GeluidEnKlik} />
         <Route exact path="/concepten/gevoel/video" component={GevoelVideo} />
+        <Route exact path="/concepten/gevoel/boos" component={Boos} />
+        <Route exact path="/concepten/gevoel/onverschillig" component={Onverschillig} />
+        <Route exact path="/concepten/gevoel/Verdrietig" component={Verdrietig} />
+        <Route exact path="/concepten/gevoel/Blij" component={Blij} />
         <Route exact path="/concepten/gevoel" component={Gevoel} />
         <Route exact path="/concepten/mijlpaal" component={Mijlpaal} />
         <Route exact path="/concepten/mijlpaal/video" component={MijlpaalVideo} />

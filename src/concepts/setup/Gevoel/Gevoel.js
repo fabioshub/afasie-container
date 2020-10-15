@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Gevoel.scss';
 import { RadioGroup, FormControl, FormControlLabel, Radio, Snackbar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const RadioGroupCustom = withStyles({
     root: {
@@ -29,9 +30,16 @@ const RadioGroupCustom = withStyles({
     }
 })(RadioGroup);
 
+const oMapping = {
+    boos: 'G1',
+    onverschillig: 'G2',
+    verdrietig: 'G3',
+    blij: 'G4',
+}
+
 export default () => {
     const classes = withStyles();
-    const [value, setValue] = React.useState('boos');
+    const [value, setValue] = React.useState('');
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -40,28 +48,31 @@ export default () => {
     return <div><div className='gevoel-container'>
         <Snackbar
             anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: 'top',
+                horizontal: 'center',
             }}
             open={true}
             message="Hoe voel je je vandaag?"
         />
         <FormControl component="fieldset">
-            <RadioGroup aria-label="mood" name="mood1" onChange={handleChange} className='gevoel-group' className='radio-button-container'>
-                <div className='mood-option o1'>
+            <RadioGroup aria-label="mood" name="mood1" onChange={handleChange} value={value} className='gevoel-group' className='radio-button-container'>
+                <div className='mood-option o1' onClick={() => setValue('boos')}>
                     <FormControlLabel value='boos' control={<Radio />} label={<i class="far fa-3x fa-angry"></i>} />
                 </div>
-                <div className='mood-option o2'>
+                <div className='mood-option o2' onClick={() => setValue('onverschillig')}>
                     <FormControlLabel value="onverschillig" control={<Radio />} label={<i class="far fa-3x fa-meh"></i>} />
                 </div>
-                <div className='mood-option o3'>
+                <div className='mood-option o3' onClick={() => setValue('verdrietig')}>
                     <FormControlLabel value="verdrietig" control={<Radio />} label={<i class="far fa-3x fa-sad-tear"></i>} />
                 </div>
-                <div className='mood-option o4'>
+                <div className='mood-option o4' onClick={() => setValue('blij')}>
                     <FormControlLabel value="blij" control={<Radio />} label={<i class="far fa-3x fa-smile"></i>} />
                 </div>
             </RadioGroup>
         </FormControl>
+        {
+            value && <Link to={`/concepten/gevoel/${value}`} className='link-to-concept'>Door naar de opdracht</Link>
+        }
     </div >
     </div>
 };
