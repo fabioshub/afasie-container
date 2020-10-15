@@ -14,7 +14,8 @@ export default () => {
       };
 
     return <div className='video-page'>
-        <Youtube videoId="E6G8Nv9f88k" opts={opts}/>
+
+        <div>Uitleg video<Youtube videoId="bypYtNMFamY" opts={opts}/></div>
         <Link to='/concepten/geluid-en-klik' className='link-to-concept'>Door naar het prototype</Link>
     </div>
 }

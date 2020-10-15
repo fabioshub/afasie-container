@@ -1,6 +1,6 @@
 import './GeluidEnKlik.scss';
 import React, { useState, useEffect, useRef } from 'react';
-import { Grid, Container, Checkbox, Snackbar } from '@material-ui/core';
+import { Grid, Container, Checkbox, Snackbar, Button } from '@material-ui/core';
 import RadioButtonUncheckedOutlinedIcon from '@material-ui/icons/RadioButtonUncheckedOutlined';
 import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
 import RadioButtonCheckedIcon from '@material-ui/icons/FiberManualRecord';
@@ -174,7 +174,7 @@ export default () => {
                 }
             </div>
         </div>
-            <button><a href="https://docs.google.com/forms/d/e/1FAIpQLSeDP7FxTH85z1xT6bOQSuROUEEUBQQ1BYVz6cWRe1K4-aYiFA/viewform?usp=sf_link">Naar de vragenlijst</a></button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDP7FxTH85z1xT6bOQSuROUEEUBQQ1BYVz6cWRe1K4-aYiFA/viewform?usp=sf_link"><Button variant='contained'>Naar de vragenlijst</Button></a>
         </Container>
     </>;
 }

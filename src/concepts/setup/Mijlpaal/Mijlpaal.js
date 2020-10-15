@@ -6,7 +6,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import ProgressMobileStepper from './Stepper';
-import { Snackbar } from '@material-ui/core';
+import { Button, Snackbar } from '@material-ui/core';
 
 
 export default () => {
@@ -37,6 +37,6 @@ export default () => {
                 return <ProgressMobileStepper text={steps[s][activeStep[s]]} activeStep={activeStep[s]} setActiveStep={(e) => setActiveStep(prev => ({ ...prev, [s]: e }))} />
             })
         }
-        <a href='https://docs.google.com/forms/d/e/1FAIpQLScfXtCBB7nQsUExGbrVGnANhVERKVE61HgM5EkvTC8spkKmnw/viewform?usp=sf_link'>Naar de vragenlijst</a>
+        <a href='https://docs.google.com/forms/d/e/1FAIpQLScfXtCBB7nQsUExGbrVGnANhVERKVE61HgM5EkvTC8spkKmnw/viewform?usp=sf_link'><Button variant='contained'>Naar de vragenlijst</Button></a>
     </div>
 }

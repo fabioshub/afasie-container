@@ -42,9 +42,9 @@ Zou je na het oefenen ook nog de bijhorende vragenlijst willen invullen? Dat zou
     <div className='opties-page' ref={ref}>
     <span className="choose-sub-title-concepten">Concepten</span>
     <div className='opties'>
-        <Link to='/concepten/geluid-en-klik' className='opties-o o1'><div className='opties-o-container'>Geluid en Klik</div></Link>
-        <Link to='/concepten/gevoel' className='opties-o'><div className='opties-o-container'>Gevoel</div></Link>
-        <Link to='/concepten/mijlpaal' className='opties-o'><div className='opties-o-container'>Voortgang</div></Link>
+        <Link to='/concepten/geluid-en-klik/video' className='opties-o o1'><div className='opties-o-container'>Geluid en Klik</div></Link>
+        <Link to='/concepten/gevoel/video' className='opties-o'><div className='opties-o-container'>Gevoel</div></Link>
+        <Link to='/concepten/mijlpaal/video' className='opties-o'><div className='opties-o-container'>Voortgang</div></Link>
     </div>
     </div>
     </>
