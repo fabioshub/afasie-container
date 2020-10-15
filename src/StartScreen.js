@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { Link } from 'react-router-dom';
 
 export const concepts = [
@@ -13,6 +13,8 @@ export const concepts = [
 ];
 
 export default () => {
+    const ref = useRef();
+
     return <><div className="choose">
         <div className="choose-container">
             <div className="choose-sub first">
@@ -27,8 +29,8 @@ Momenteel bestaan er al wat apps en platformen waar afasiepatiënten op kunnen o
 Zou je na het oefenen ook nog de bijhorende vragenlijst willen invullen? Dat zou ons enorm helpen! Alvast bedankt.
             </div>
             </div>
-            <div className="choose-sub second">
-                <div>
+            <div className="choose-sub second" >
+                <div onClick={() => ref.current.scrollIntoView({behavior: 'smooth'})} style={{cursor: 'pointer'}}>
                 Scroll naar beneden <br />
                voor concepten 
                     </div>
@@ -37,12 +39,12 @@ Zou je na het oefenen ook nog de bijhorende vragenlijst willen invullen? Dat zou
         </div>
         {/* <Link to='/proptotypes'><div className="choose-option">Prototypes</div></Link> */}
     </div>
-    <div className='opties-page'>
+    <div className='opties-page' ref={ref}>
     <span className="choose-sub-title-concepten">Concepten</span>
     <div className='opties'>
-        <Link to='/concepten/geluid-en-klik/video' className='opties-o o1'><div className='opties-o-container'>geluid en klik</div></Link>
-        <Link to='/concepten/gevoel/video' className='opties-o'><div className='opties-o-container'>gevoel</div></Link>
-        <Link to='/concepten/mijlpaal/video' className='opties-o'><div className='opties-o-container'>Voortgang</div></Link>
+        <Link to='/concepten/geluid-en-klik' className='opties-o o1'><div className='opties-o-container'>Geluid en Klik</div></Link>
+        <Link to='/concepten/gevoel' className='opties-o'><div className='opties-o-container'>Gevoel</div></Link>
+        <Link to='/concepten/mijlpaal' className='opties-o'><div className='opties-o-container'>Voortgang</div></Link>
     </div>
     </div>
     </>
