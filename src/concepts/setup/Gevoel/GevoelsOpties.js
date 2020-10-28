@@ -7,7 +7,6 @@ const message = <div>
     De focus ligt dan ook niet op de individuele opdracht, <br />
     maar op het gehele concept. <br />
     Verschillende emoties geven andere opdrachten. <br /><br />
-    <a href='https://docs.google.com/forms/d/e/1FAIpQLSf3TryUP5ybksU1b6cUEy-4Ao3AANRhR41Axl1vleWKrwV1gw/viewform?usp=sf_link'><Button variant='contained'>Naar de vragenlijst</Button></a>
 </div>
 
 export const Boos = () => {

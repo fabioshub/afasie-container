@@ -37,6 +37,5 @@ export default () => {
                 return <ProgressMobileStepper text={steps[s][activeStep[s]]} activeStep={activeStep[s]} setActiveStep={(e) => setActiveStep(prev => ({ ...prev, [s]: e }))} />
             })
         }
-        <a href='https://docs.google.com/forms/d/e/1FAIpQLScfXtCBB7nQsUExGbrVGnANhVERKVE61HgM5EkvTC8spkKmnw/viewform?usp=sf_link'><Button variant='contained'>Naar de vragenlijst</Button></a>
     </div>
 }

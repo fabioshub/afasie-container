@@ -174,7 +174,6 @@ export default () => {
                 }
             </div>
         </div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDP7FxTH85z1xT6bOQSuROUEEUBQQ1BYVz6cWRe1K4-aYiFA/viewform?usp=sf_link"><Button variant='contained'>Naar de vragenlijst</Button></a>
         </Container>
     </>;
 }

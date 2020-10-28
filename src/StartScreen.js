@@ -1,5 +1,6 @@
 import React, {useRef} from 'react';
 import { Link } from 'react-router-dom';
+import {Container, Grid} from '@material-ui/core';
 
 export const concepts = [
     {
@@ -15,7 +16,7 @@ export const concepts = [
 export default () => {
     const ref = useRef();
 
-    return <><div className="choose">
+    return <Container><div className="choose">
         <div className="choose-container">
             <div className="choose-sub first">
                 <span className="choose-sub-title">Introductie</span>
@@ -30,11 +31,10 @@ Zou je na het oefenen ook nog de bijhorende vragenlijst willen invullen? Dat zou
             </div>
             </div>
             <div className="choose-sub second" >
-                <div onClick={() => ref.current.scrollIntoView({behavior: 'smooth'})} style={{cursor: 'pointer'}}>
+                <div className="choose-sub second tocons" onClick={() => ref.current.scrollIntoView({behavior: 'smooth'})} style={{cursor: 'pointer'}}>
                 Scroll naar beneden <br />
                voor concepten 
                     </div>
-                <i className='fas fa-arrow-down arrow-down' />
             </div>
         </div>
         {/* <Link to='/proptotypes'><div className="choose-option">Prototypes</div></Link> */}
@@ -47,5 +47,5 @@ Zou je na het oefenen ook nog de bijhorende vragenlijst willen invullen? Dat zou
         <Link to='/concepten/mijlpaal/video' className='opties-o'><div className='opties-o-container'>Voortgang</div></Link>
     </div>
     </div>
-    </>
+    </Container>
 }
