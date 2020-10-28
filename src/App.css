@@ -115,6 +115,8 @@ a {
   align-items: center;
   padding-right: 2%;
   flex-direction: column;
+
+ 
 }
 
 .choose-sub-concept-title, .choose-sub.first .choose-sub-concept-title {

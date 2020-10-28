@@ -40,7 +40,7 @@ function App() {
     }
   }, [])
   return (
-    <div className="App">
+    <div className="App scroll1">
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6">
