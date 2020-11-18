@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Container, Grid } from '@material-ui/core';
 
 export const concepts = [
@@ -15,26 +15,10 @@ export const concepts = [
 
 export default () => {
     const ref = useRef();
-
+    let location = useLocation();
+    
     return <Container className="scroll1"><div className="choose">
-        <div className="choose-container">
-            <div className="choose-sub first">
-                <div className="choose-sub-title fs-13 ">Oud, klik hier voor de nieuwse update: <span onClick={() => window.scroll(0, 10000)} className='goto-btn'>update 1.0</span></div>
-                <span className="choose-sub-title">Introductie</span>
-                <div className="choose-sub-intro">
-                    Wij zijn team Digital Progress en wij houden ons in deze minor bezig met de ontwerpvraag: “Hoe kunnen we ervoor zorgen dat afasiepatiënten, met ieder hun eigen behoeftes, zelfstandig kunnen blijven oefenen nadat de behandeling met de logopedist is afgerond?”
-                <br /><br />
-                    <div style={{ marginTop: '30px', fontSize: '10pt', fontWeight: 'bold' }}>
-                        Klik op de knoppen hiernaast om onze concepten te bekijken.
-            </div>
-                </div>
-            </div>
-            <div className="choose-sub second" >
-                <Link to='/concepten/geluid-en-klik/video' className='tocons'><div>Geluid en Klik</div></Link>
-                <Link to='/concepten/gevoel/video' className='tocons'><div>Gevoel</div></Link>
-                <Link to='/concepten/mijlpaal/video' className='tocons'><div>Voortgang</div></Link>
-            </div>
-        </div>
+
         <div className="choose-container">
             <div className="choose-sub first">
                 <span className="choose-sub-title">Update 1.0 - Concept milestone <span className='ml-2' style={{fontSize: '13px', color: 'grey'}}>huidig</span></span>
@@ -69,6 +53,24 @@ export default () => {
                     </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div className="choose-container">
+            <div className="choose-sub first">
+                <div className="choose-sub-title fs-13 ">Oud, klik hier voor de nieuwse update: <span onClick={() => window.scroll(0, 0)} className='goto-btn'>update 1.0</span></div>
+                <span className="choose-sub-title">Introductie</span>
+                <div className="choose-sub-intro">
+                    Wij zijn team Digital Progress en wij houden ons in deze minor bezig met de ontwerpvraag: “Hoe kunnen we ervoor zorgen dat afasiepatiënten, met ieder hun eigen behoeftes, zelfstandig kunnen blijven oefenen nadat de behandeling met de logopedist is afgerond?”
+                <br /><br />
+                    <div style={{ marginTop: '30px', fontSize: '10pt', fontWeight: 'bold' }}>
+                        Klik op de knoppen hiernaast om onze concepten te bekijken.
+            </div>
+                </div>
+            </div>
+            <div className="choose-sub second" >
+                <Link to='/concepten/geluid-en-klik/video' className='tocons'><div>Geluid en Klik</div></Link>
+                <Link to='/concepten/gevoel/video' className='tocons'><div>Gevoel</div></Link>
+                <Link to='/concepten/mijlpaal/video' className='tocons'><div>Voortgang</div></Link>
             </div>
         </div>
     </div>
