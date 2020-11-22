@@ -16,6 +16,9 @@ import GevoelVideo from './concepts/setup/Gevoel/GevoelVideo';
 import Gevoel from './concepts/setup/Gevoel/Gevoel';
 import Mijlpaal from './concepts/setup/Mijlpaal/Mijlpaal';
 import MijlpaalVideo from './concepts/setup/Mijlpaal/MijlpaalVideo';
+import Prototype from './prototype/Prototype';
+import Instellingen from './prototype/Instellingen';
+import Achievements from './prototype/Achievements';
 import { Blij, Boos, G1, G2, G3, G4, Onverschillig, Verdrietig } from './concepts/setup/Gevoel/GevoelsOpties';
 
 
@@ -59,6 +62,9 @@ function App() {
         <Route exact path="/concepten/mijlpaal" component={Mijlpaal} />
         <Route exact path="/concepten/mijlpaal/video" component={MijlpaalVideo} />
         <Route exact path="/concepten" component={Concepts} />
+        <Route exact path="/prototype" component={Prototype} />
+        <Route exact path="/prototype/instellingen" component={Instellingen} />
+        <Route exact path="/prototype/prijzenkast" component={Achievements} />
         <Route exact path="/" component={StartScreen} />
     </div>
   );
