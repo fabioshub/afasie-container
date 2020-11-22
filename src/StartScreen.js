@@ -17,12 +17,10 @@ export default () => {
     const ref = useRef();
     let location = useLocation();
     
-    return <Container className="scroll1"><div className="choose">
-
-        <div className="choose-container">
-            <div className="choose-sub first">
+    return <Container className="scroll1">
+        <div className="choose-container flex-column justify-content-center align-items-start">
                 <span className="choose-sub-title">Update 1.0 - Concept milestone <span className='ml-2' style={{fontSize: '13px', color: 'grey'}}>huidig</span></span>
-                <div className="choose-sub-intro">
+                <div className="d-flex flex-column fs-13 align-items-start text-left">
                     Voordat de gebruiker aan de slag gaat met het maken van oefeningen zal hij/zij eerst een doel moeten opstellen waarmee hij/zij de aangeven tijd (dagen, weken of dagen) aan gaat werken.
                     Vervolgens wordt er een plantje aan het mijlpaal gekoppeld. Ook zullen er doelen zijn waar de gebruiker uit kan kiezen.
                     <br /><br />
@@ -53,7 +51,6 @@ export default () => {
                     </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div className="choose-container">
             <div className="choose-sub first">
@@ -73,7 +70,5 @@ export default () => {
                 <Link to='/concepten/mijlpaal/video' className='tocons'><div>Voortgang</div></Link>
             </div>
         </div>
-    </div>
-        {/* <Link to='/proptotypes'><div className="choose-option">Prototypes</div></Link> */}
     </Container >
 }
