@@ -18,7 +18,9 @@ import Mijlpaal from './concepts/setup/Mijlpaal/Mijlpaal';
 import MijlpaalVideo from './concepts/setup/Mijlpaal/MijlpaalVideo';
 import Prototype from './prototype/Prototype';
 import Instellingen from './prototype/Instellingen';
+import Planten from './prototype/Planten';
 import Achievements from './prototype/Achievements';
+import ReactGA from 'react-ga';
 import { Blij, Boos, G1, G2, G3, G4, Onverschillig, Verdrietig } from './concepts/setup/Gevoel/GevoelsOpties';
 
 
@@ -35,6 +37,8 @@ function App() {
     }
   })
   useEffect(() => {
+    ReactGA.initialize('G-86K3Q9C6GS');
+    ReactGA.pageview('/');
     const title = window.location.pathname.split('/').filter(a => a.length).join(' / ').split('-').join(' ')
     if (title.trim().length) {
       setPathname('Home / ' + title);
@@ -42,6 +46,9 @@ function App() {
       setPathname('Home')
     }
   }, [])
+
+  ReactGA.initialize('G-86K3Q9C6GS');
+
   return (
     <div className="App scroll1">
       <AppBar position="static">
@@ -62,9 +69,10 @@ function App() {
         <Route exact path="/concepten/mijlpaal" component={Mijlpaal} />
         <Route exact path="/concepten/mijlpaal/video" component={MijlpaalVideo} />
         <Route exact path="/concepten" component={Concepts} />
-        <Route exact path="/prototype" component={Prototype} />
         <Route exact path="/prototype/instellingen" component={Instellingen} />
         <Route exact path="/prototype/prijzenkast" component={Achievements} />
+        <Route exact path="/prototype/planten" component={Planten} />
+        <Route exact path="/prototype" component={Prototype} />
         <Route exact path="/" component={StartScreen} />
     </div>
   );
