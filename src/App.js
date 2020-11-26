@@ -22,7 +22,13 @@ import Planten from './prototype/Planten';
 import Achievements from './prototype/Achievements';
 import ReactGA from 'react-ga';
 import { Blij, Boos, G1, G2, G3, G4, Onverschillig, Verdrietig } from './concepts/setup/Gevoel/GevoelsOpties';
-
+import { Beginscherm } from './prototype/complete/Beginscherm';
+import { Klaar } from './prototype/complete/Klaar';
+import { MijlpaalOverzicht } from './prototype/complete/MijpaalOverzicht';
+import { NaResultaat } from './prototype/complete/NaResultaat';
+import { Oefening } from './prototype/complete/Oefening';
+import { Oefenscherm } from './prototype/complete/Oefenscherm';
+import { Resultaat } from './prototype/complete/Resultaat';
 
 function App() {
   const [pathname, setPathname] = useState('');
@@ -47,35 +53,159 @@ function App() {
     }
   }, [])
 
-  ReactGA.initialize('G-86K3Q9C6GS');
-
   return (
     <div className="App scroll1">
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6">
-            {pathname}
-          </Typography>
-        </Toolbar>
-      </AppBar>
-        <Route exact path="/concepten/geluid-en-klik/video" component={GeluidEnKlikVideo} />
-        <Route exact path="/concepten/geluid-en-klik" component={GeluidEnKlik} />
-        <Route exact path="/concepten/gevoel/video" component={GevoelVideo} />
-        <Route exact path="/concepten/gevoel/boos" component={Boos} />
-        <Route exact path="/concepten/gevoel/onverschillig" component={Onverschillig} />
-        <Route exact path="/concepten/gevoel/Verdrietig" component={Verdrietig} />
-        <Route exact path="/concepten/gevoel/Blij" component={Blij} />
-        <Route exact path="/concepten/gevoel" component={Gevoel} />
-        <Route exact path="/concepten/mijlpaal" component={Mijlpaal} />
-        <Route exact path="/concepten/mijlpaal/video" component={MijlpaalVideo} />
-        <Route exact path="/concepten" component={Concepts} />
-        <Route exact path="/prototype/instellingen" component={Instellingen} />
-        <Route exact path="/prototype/prijzenkast" component={Achievements} />
-        <Route exact path="/prototype/planten" component={Planten} />
-        <Route exact path="/prototype" component={Prototype} />
-        <Route exact path="/" component={StartScreen} />
+
+      {
+        routes.map(route => {
+          const Comp = route.component;
+          return <Route exact path={route.route}>
+            {
+              route.enableHeader && <AppBar position="static">
+              <Toolbar>
+                <Typography variant="h6">
+                  {pathname}
+                </Typography>
+              </Toolbar>
+            </AppBar>
+            }
+            <Comp />
+          </Route>
+        })
+      }
     </div>
   );
 }
 
 export default App;
+
+const routes = [
+  {
+    route: '/',
+    component: StartScreen,
+    enableHeader: true
+  },
+  {
+    route: '/prototype',
+    component: Beginscherm,
+  },
+  {
+    route: '/prototype/klaar',
+    component: Klaar,
+  },
+  {
+    route: '/prototype/MijlpaalOverzicht',
+    component: Oefenscherm,
+  },
+  {
+    route: '/prototype/naresultaat',
+    component: NaResultaat,
+  },
+  {
+    route: '/prototype/oefening',
+    component: Oefening,
+  },
+  {
+    route: '/prototype/oefenscherm',
+    component: Oefenscherm,
+  },
+  {
+    route: '/prototype/resultaat',
+    component: Resultaat,
+  },
+  {
+    route: '/concepten/planten',
+    component: Planten,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/planten',
+    component: Planten,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/kiezen',
+    component: Prototype,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/prijzenkast',
+    component: Achievements,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/instellingen',
+    component: Instellingen,
+    enableHeader: true
+  },
+  {
+    route: '/concepten',
+    component: Concepts,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/mijlpaal/video',
+    component: MijlpaalVideo,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/mijlpaal',
+    component: Mijlpaal,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/geluid-en-klik/video',
+    component: GeluidEnKlikVideo,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/geluid-en-klik',
+    component: GeluidEnKlik,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/gevoel/video',
+    component: GevoelVideo,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/gevoel/boos',
+    component: Boos,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/gevoel/onverschillig',
+    component: Onverschillig,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/gevoel/Verdrietig',
+    component: Verdrietig,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/gevoel/Blij',
+    component: Blij,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/gevoel',
+    component: Gevoel,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/geluid-en-klik/video',
+    component: <div></div>,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/geluid-en-klik/video',
+    component: <div></div>,
+    enableHeader: true
+  },
+  {
+    route: '/concepten/geluid-en-klik/video',
+    component: <div></div>,
+    enableHeader: true
+  },
+]
