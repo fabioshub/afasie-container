@@ -26,7 +26,7 @@ import { Beginscherm } from './prototype/complete/Beginscherm';
 import { Klaar } from './prototype/complete/Klaar';
 import { MijlpaalOverzicht } from './prototype/complete/MijpaalOverzicht';
 import { NaResultaat } from './prototype/complete/NaResultaat';
-import { Oefening } from './prototype/complete/Oefening';
+import { Oefening1 } from './prototype/complete/Oefening';
 import { Oefenscherm } from './prototype/complete/Oefenscherm';
 import { Resultaat } from './prototype/complete/Resultaat';
 
@@ -95,7 +95,7 @@ const routes = [
   },
   {
     route: '/prototype/MijlpaalOverzicht',
-    component: Oefenscherm,
+    component: MijlpaalOverzicht,
   },
   {
     route: '/prototype/naresultaat',
@@ -103,7 +103,7 @@ const routes = [
   },
   {
     route: '/prototype/oefening',
-    component: Oefening,
+    component: Oefening1,
   },
   {
     route: '/prototype/oefenscherm',

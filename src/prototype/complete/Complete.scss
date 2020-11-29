@@ -62,3 +62,32 @@
         max-height: 100%;
     }
 }
+
+.resultaat {
+    .klaar {
+        font-size: 30px;
+    }
+}
+
+.klaar {
+    .klaar {
+        font-size: 30px;
+    }
+}
+
+.oefening {
+    .placeholder {
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
+    }
+
+}
+
+.mijlpaaloverzicht {
+    overflow-y: scroll;
+    .placeholder {
+        height: 200px;
+        width: 200px;
+    }
+}
