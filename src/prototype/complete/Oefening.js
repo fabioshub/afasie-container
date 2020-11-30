@@ -55,7 +55,7 @@ const Exc = ({oefeningType}) => {
             <div className='d-flex flex-column mt-3 mb-3 p-2 default-text ml-5'>
                 <span>Luister naar het woord.</span>
                 <span>Kies de juiste afbeelding.</span>
-                <div onClick={() => speak({text: chosenWord, lang: 'nl'})} className='d-flex p-2 align-items-center mt-3'>
+                <div onClick={() => speak({text: chosenWord, lang: 'nl-NL'})} className='d-flex p-2 align-items-center mt-3'>
                     <VolumeUpIcon style={{fontSize: '40px', color: '#7FBCC6'}} />
                     <Button className='btn-default-text ml-2'>Luister</Button>
                 </div>
