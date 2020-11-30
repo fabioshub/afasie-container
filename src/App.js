@@ -25,20 +25,31 @@ import { Beginscherm } from './prototype/complete/Beginscherm';
 import { Klaar } from './prototype/complete/Klaar';
 import { MijlpaalOverzicht } from './prototype/complete/MijpaalOverzicht';
 import { NaResultaat } from './prototype/complete/NaResultaat';
-import { Oefening1, Oefening2, Oefening3 } from './prototype/complete/Oefening';
+import { Oefening1, Oefening2, Oefening3, Oefening4, Oefening5, Oefening6 } from './prototype/complete/Oefening';
 import { Oefenscherm } from './prototype/complete/Oefenscherm';
 import { Resultaat } from './prototype/complete/Resultaat';
 import { Analytics } from './Analytics';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 function App() {
   const [pathname, setPathname] = useState('');
   let history = useHistory();
 
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#F49445',
+      },
+      secondary: {
+        main: '#7FBCC6'
+      }
+    },
+  });
+
   useEffect(() => {
     history.listen(loc => {
       const title = loc.pathname.split('/').filter(a => a.length).join(' / ').split('-').join(' ')
       if (!pathname.trim().length) return;
-      console.log('RUNNING')
       if (title.trim().length) {
         setPathname('Home / ' + title);
       } else {
@@ -57,7 +68,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App scroll1">
+    <ThemeProvider theme={theme}>
+
+    <div className="App scroll1"> 
       <Analytics />
       {
         routes.map(route => {
@@ -77,6 +90,7 @@ function App() {
         })
       }
     </div>
+    </ThemeProvider>
   );
 }
 
@@ -115,6 +129,18 @@ const routes = [
   {
     route: '/prototype/oefening3',
     component: Oefening3,
+  },
+  {
+    route: '/prototype/oefening4',
+    component: Oefening4,
+  },
+  {
+    route: '/prototype/oefening5',
+    component: Oefening5,
+  },
+  {
+    route: '/prototype/oefening6',
+    component: Oefening6,
   },
   {
     route: '/prototype/oefenscherm',

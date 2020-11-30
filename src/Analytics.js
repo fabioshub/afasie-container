@@ -24,7 +24,6 @@ export const Analytics = () => {
         history.listen(loc => {
             const title = loc.pathname.split('/').filter(a => a.length).join(' / ').split('-').join(' ')
             if (!title.trim().length) return;
-            console.log('RUNNING')
             if (title.trim().length) {
                 setPathname('Home / ' + title);
                 ReactGA.pageview(window.location.pathname);

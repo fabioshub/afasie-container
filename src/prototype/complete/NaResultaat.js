@@ -1,16 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, PrototypePage } from './PrototypingTools';
-import zonnebloem from '../sprites/planten/zonnebloem.gif'
+import {useLocation} from 'react-router-dom'
+import zonnebloem from '../sprites/planten/zonnebloem.gif';
+import zonnebloem1 from '../sprites/planten/zonnebloem1.png';
+import zonnebloem2 from '../sprites/planten/zonnebloem2.png';
+import zonnebloem3 from '../sprites/planten/zonnebloem3.png';
+import zonnebloem4 from '../sprites/planten/zonnebloem4.png';
+import zonnebloem5 from '../sprites/planten/zonnebloem5.png';
+import { getItem } from '../Storage'
+import { oefeningen as allOefeningen } from './Oefenscherm';
+
 import { Link } from 'react-router-dom';
 
+export const zonnebloemImages = [zonnebloem, zonnebloem1, zonnebloem2, zonnebloem3, zonnebloem4, zonnebloem5];
+
 export const NaResultaat = (props) => {
+    const query = new URLSearchParams(useLocation().search)
+    const [doneAmount, setDoneAmount] = useState(0);
+
+    useEffect(() => {
+        const allCount = allOefeningen.length;
+        setDoneAmount(allOefeningen.reduce((acc, val) => {
+            if (getItem(val.link)) {
+                return acc + 1;
+            }
+            return acc + 0;
+        }, 0))
+    }, [])
     return <PrototypePage childClass='naResultaat'>
-        <div className='d-flex h-100 justify-content-around align-items-center signal-border'>
-            <div className='d-flex flex-column'>
-                <span className='signal-border p-3'>TEXT</span>
-                <Link to='/prototype/oefenscherm'><Button className='pbtn mt-3 signal-border'>Oefenen</Button></Link>
+        <div className='d-flex h-100 justify-content-center align-items-center'>
+            <div className='d-flex flex-column w-100 pl-5'>
+<span className='title-text pb-3'>{query.get('grown') ? 'Hij is gegroeid!' : 'Blijf oefenen!'}</span>
+                <Link to='/prototype/mijlpaaloverzicht'><Button className='btn-small-text mt-3'>Bekijk ze allemaal</Button></Link>
             </div>
-            <img src={zonnebloem} className='zonnebloem signal-border' />
+            <div className=' h-100 p-5 bg-lightblue d-flex align-items-center'>
+                <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * (doneAmount / allOefeningen.length))]} className='zonnebloem' />
+            </div>
+
         </div>
     </PrototypePage>
 }
