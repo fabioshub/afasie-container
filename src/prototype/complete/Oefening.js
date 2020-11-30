@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import { useSpeechSynthesis } from 'react-speech-kit';
 import { PrototypePage, Button } from './PrototypingTools'
-import {setItem, getItem} from '../Storage'
-import {useHistory} from 'react-router-dom'
-import {oefeningen as aO} from './Oefenscherm'
+import { setItem, getItem } from '../Storage'
+import { useHistory } from 'react-router-dom'
+import { oefeningen as aO } from './Oefenscherm'
 
 const roulette = [
     'Hond',
@@ -14,25 +14,25 @@ const roulette = [
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
-  
+
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-  
-    return array;
-  };
 
-const Exc = ({oefeningType}) => {
-    const { speak } = useSpeechSynthesis();
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+};
+
+const Exc = ({ oefeningType }) => {
+    const { speak, voices } = useSpeechSynthesis();
     const [chosenWord, setChosenWord] = useState('');
     const [chooseList, setChooseList] = useState([]);
     const history = useHistory();
@@ -45,9 +45,9 @@ const Exc = ({oefeningType}) => {
     const correctlyMade = () => {
         setItem(oefeningType, true)
         if (getItem(oefeningType) && getItem(oefeningType) === true) {
-            return history.push({pathname: '/prototype/resultaat'})
+            return history.push({ pathname: '/prototype/resultaat' })
         }
-        history.push({pathname: '/prototype/resultaat', search: '?grown=true'})
+        history.push({ pathname: '/prototype/resultaat', search: '?grown=true' })
     }
 
     return <PrototypePage childClass='oefening'>
@@ -55,8 +55,10 @@ const Exc = ({oefeningType}) => {
             <div className='d-flex flex-column mt-3 mb-3 p-2 default-text ml-5'>
                 <span>Luister naar het woord.</span>
                 <span>Kies de juiste afbeelding.</span>
-                <div onClick={() => speak({text: chosenWord, lang: 'nl-NL'})} className='d-flex p-2 align-items-center mt-3'>
-                    <VolumeUpIcon style={{fontSize: '40px', color: '#7FBCC6'}} />
+                <div onClick={() => speak({
+                    text: chosenWord, voice: voices[13]
+                })} className='d-flex p-2 align-items-center mt-3'>
+                    <VolumeUpIcon style={{ fontSize: '40px', color: '#7FBCC6' }} />
                     <Button className='btn-default-text ml-2'>Luister</Button>
                 </div>
             </div>
@@ -77,25 +79,25 @@ const Exc = ({oefeningType}) => {
 }
 
 export const Oefening1 = (props) => {
-    return <Exc oefeningType={aO[0].link}/>
+    return <Exc oefeningType={aO[0].link} />
 }
 
 export const Oefening2 = (props) => {
-    return <Exc oefeningType={aO[1].link}/>
+    return <Exc oefeningType={aO[1].link} />
 }
 
 export const Oefening3 = (props) => {
-    return <Exc oefeningType={aO[2].link}/>
+    return <Exc oefeningType={aO[2].link} />
 }
 
 export const Oefening4 = (props) => {
-    return <Exc oefeningType={aO[3].link}/>
+    return <Exc oefeningType={aO[3].link} />
 }
 
 export const Oefening5 = (props) => {
-    return <Exc oefeningType={aO[4].link}/>
+    return <Exc oefeningType={aO[4].link} />
 }
 
 export const Oefening6 = (props) => {
-    return <Exc oefeningType={aO[5].link}/>
+    return <Exc oefeningType={aO[5].link} />
 }
