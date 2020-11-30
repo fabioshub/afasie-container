@@ -20,31 +20,34 @@ import Prototype from './prototype/Prototype';
 import Instellingen from './prototype/Instellingen';
 import Planten from './prototype/Planten';
 import Achievements from './prototype/Achievements';
-import ReactGA from 'react-ga';
 import { Blij, Boos, G1, G2, G3, G4, Onverschillig, Verdrietig } from './concepts/setup/Gevoel/GevoelsOpties';
 import { Beginscherm } from './prototype/complete/Beginscherm';
 import { Klaar } from './prototype/complete/Klaar';
 import { MijlpaalOverzicht } from './prototype/complete/MijpaalOverzicht';
 import { NaResultaat } from './prototype/complete/NaResultaat';
-import { Oefening1 } from './prototype/complete/Oefening';
+import { Oefening1, Oefening2, Oefening3 } from './prototype/complete/Oefening';
 import { Oefenscherm } from './prototype/complete/Oefenscherm';
 import { Resultaat } from './prototype/complete/Resultaat';
+import { Analytics } from './Analytics';
 
 function App() {
   const [pathname, setPathname] = useState('');
   let history = useHistory();
 
-  history.listen(loc => {
-    const title = loc.pathname.split('/').filter(a => a.length).join(' / ').split('-').join(' ')
-    if (title.trim().length) {
-      setPathname('Home / ' + title);
-    } else {
-      setPathname('Home')
-    }
-  })
   useEffect(() => {
-    ReactGA.initialize('G-86K3Q9C6GS');
-    ReactGA.pageview('/');
+    history.listen(loc => {
+      const title = loc.pathname.split('/').filter(a => a.length).join(' / ').split('-').join(' ')
+      if (!pathname.trim().length) return;
+      console.log('RUNNING')
+      if (title.trim().length) {
+        setPathname('Home / ' + title);
+      } else {
+        setPathname('Home')
+      }
+    })
+  }, [])
+
+  useEffect(() => {
     const title = window.location.pathname.split('/').filter(a => a.length).join(' / ').split('-').join(' ')
     if (title.trim().length) {
       setPathname('Home / ' + title);
@@ -55,7 +58,7 @@ function App() {
 
   return (
     <div className="App scroll1">
-
+      <Analytics />
       {
         routes.map(route => {
           const Comp = route.component;
@@ -102,8 +105,16 @@ const routes = [
     component: NaResultaat,
   },
   {
-    route: '/prototype/oefening',
+    route: '/prototype/oefening1',
     component: Oefening1,
+  },
+  {
+    route: '/prototype/oefening2',
+    component: Oefening2,
+  },
+  {
+    route: '/prototype/oefening3',
+    component: Oefening3,
   },
   {
     route: '/prototype/oefenscherm',

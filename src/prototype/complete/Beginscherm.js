@@ -7,8 +7,8 @@ export const Beginscherm = (props) => {
     return <PrototypePage childClass='beginscherm'>
         <div className='d-flex h-100 justify-content-around align-items-center signal-border'>
             <div className='d-flex flex-column'>
-                <span className='signal-border p-3'>TEXT</span>
-                <Link to='/prototype/oefenscherm'><Button className='pbtn mt-3 signal-border'>Oefenen</Button></Link>
+                <span className='signal-border p-3 default-text'>Goedendag!</span>
+                <Link to='/prototype/oefenscherm'><Button className='mt-3 btn-small-text'>Oefenen</Button></Link>
             </div>
             <img src={zonnebloem} className='zonnebloem signal-border' />
         </div>
