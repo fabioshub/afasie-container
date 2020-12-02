@@ -32,7 +32,7 @@ export const NaResultaat = (props) => {
         <div className='d-flex h-100 justify-content-center align-items-center'>
             <div className='d-flex flex-column w-100 pl-5'>
 <span className='title-text pb-3'>{query.get('grown') ? 'Hij is gegroeid!' : 'Blijf oefenen!'}</span>
-                <Button onClick={onClickAnalytics(() => history.push('/prototype/mijlpaaloverzicht'), 'Mijlpalenoverzicht')} className='btn-small-text mt-3'>Bekijk ze allemaal</Button>
+                <Button onClick={onClickAnalytics(() => history.push('/prototype/mijlpaaloverzicht'), 'Mijlpalenoverzicht')} className='btn-small-text mt-3'>Bekijk alle planten</Button>
             </div>
             <div className=' h-100 p-5 bg-lightblue d-flex align-items-center'>
                 <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * (doneAmount / allOefeningen.length))]} className='zonnebloem' />

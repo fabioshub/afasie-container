@@ -7,31 +7,44 @@ import { useHistory } from 'react-router-dom'
 import { oefeningen as aO } from './Oefenscherm'
 import { onClickAnalytics } from '../../Analytics';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import useSound from 'use-sound';
+const hondSound = '/sounds/Hond.mp3'
+const katSound = '/sounds/Kat.mp3'
+const huisSound = '/sounds/Huis.mp3'
+const boomSound = '/sounds/Boom.mp3'
+const fietsSound = '/sounds/Fiets.mp3'
+const bootSound = '/sounds/Boot.mp3'
 
 const roulette = [
     {
         word: 'hond',
-        img: '/images/hond.jpg'
+        img: '/images/hond.jpg',
+        audio: hondSound
     },
     {
         word: 'kat',
-        img: '/images/kat.jpeg'
+        img: '/images/kat.jpeg',
+        audio: katSound
     },
     {
         word: 'huis',
-        img: '/images/huis.jpeg'
+        img: '/images/huis.jpeg',
+        audio: huisSound
     },
     {
         word: 'boom',
-        img: '/images/boom.jpg'
+        img: '/images/boom.jpg',
+        audio: boomSound
     },
     {
         word: 'fiets',
-        img: '/images/fiets.jpg'
+        img: '/images/fiets.jpg',
+        audio: fietsSound
     },
     {
         word: 'boot',
-        img: '/images/boot.jpg'
+        img: '/images/boot.jpg',
+        audio: bootSound
     }
 ];
 
@@ -89,6 +102,21 @@ const Exc = ({ oefeningType, correctlyMade, active }) => {
     // an async callback.
     const countRef = useRef(false)
 
+    const [playFiets] = useSound(fietsSound);
+    const [PlayBoot] = useSound(bootSound);
+    const [playBoom] = useSound(boomSound);
+    const [playKat] = useSound(katSound);
+    const [playHond] = useSound(hondSound);
+    const [playHuis] = useSound(huisSound);
+
+    const soundMap = {
+        hond: playHond,
+        kat: playKat,
+        huis: playHuis,
+        boom: playBoom,
+        boot: PlayBoot,
+        fiets: playFiets
+    }
 
     useEffect(() => {
         setTryAgain(false);
@@ -111,10 +139,7 @@ const Exc = ({ oefeningType, correctlyMade, active }) => {
                 <span>Luister naar het woord.</span>
                 <span>Kies de juiste afbeelding.</span>
                 <div onClick={() => {
-                    speak({
-                        text: chosenWord, voice: voices[13]
-
-                    }); console.log(countRef.current)
+                    soundMap[chosenWord]()
                 }} className='d-flex p-2 align-items-center mt-3'>
                     <VolumeUpIcon style={{ fontSize: '40px', color: '#7FBCC6' }} />
                     <Button className='btn-default-text ml-2'>Luister</Button>
