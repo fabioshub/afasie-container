@@ -9,14 +9,15 @@ import zonnebloem4 from '../sprites/planten/zonnebloem4.png';
 import zonnebloem5 from '../sprites/planten/zonnebloem5.png';
 import { getItem } from '../Storage'
 import { oefeningen as allOefeningen } from './Oefenscherm';
-
-import { Link } from 'react-router-dom';
+import { onClickAnalytics } from '../../Analytics';
+import {useHistory} from 'react-router-dom';
 
 export const zonnebloemImages = [zonnebloem, zonnebloem1, zonnebloem2, zonnebloem3, zonnebloem4, zonnebloem5];
 
 export const NaResultaat = (props) => {
     const query = new URLSearchParams(useLocation().search)
     const [doneAmount, setDoneAmount] = useState(0);
+    const history = useHistory();
 
     useEffect(() => {
         const allCount = allOefeningen.length;
@@ -31,7 +32,7 @@ export const NaResultaat = (props) => {
         <div className='d-flex h-100 justify-content-center align-items-center'>
             <div className='d-flex flex-column w-100 pl-5'>
 <span className='title-text pb-3'>{query.get('grown') ? 'Hij is gegroeid!' : 'Blijf oefenen!'}</span>
-                <Link to='/prototype/mijlpaaloverzicht'><Button className='btn-small-text mt-3'>Bekijk ze allemaal</Button></Link>
+                <Button onClick={onClickAnalytics(() => history.push('/prototype/mijlpaaloverzicht'), 'Mijlpalenoverzicht')} className='btn-small-text mt-3'>Bekijk ze allemaal</Button>
             </div>
             <div className=' h-100 p-5 bg-lightblue d-flex align-items-center'>
                 <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * (doneAmount / allOefeningen.length))]} className='zonnebloem' />

@@ -9,6 +9,7 @@ import zonnebloemKlein from '../sprites/planten/zonnebloem1.png';
 import zonnebloemMiddel from '../sprites/planten/zonnebloem3.png';
 import zonnebloemGroot from '../sprites/planten/zonnebloem5.png';
 import {useHistory} from 'react-router-dom'
+import { onClickAnalytics } from '../../Analytics';
 
 const PBar = withStyles({
     root: {
@@ -40,7 +41,7 @@ export const MijlpaalOverzicht = (props) => {
     }, [])
     return <PrototypePage childClass='mijlpaaloverzicht'>
         <div className=' h-100 d-flex flex-column mb-3'>
-            <div className='w-100 d-flex justify-content-end pr-4'><span className='btn-small-text pointer' onClick={() => history.push('/prototype/klaar')}>Volgende</span></div>
+            <div className='w-100 d-flex justify-content-end pr-4'><span className='btn-small-text pointer' onClick={onClickAnalytics(() => history.push('/prototype/klaar'), 'Klaar')}>Volgende</span></div>
             <div className='d-flex w-100 p-4'>
                 <div className='d-flex w-100 align-items-center p-4 bg-lightblue'>
                     <div className='mr-3' style={{ height: '300px', width: '400px' }}>
