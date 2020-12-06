@@ -34,7 +34,7 @@ export const Oefenscherm = (props) => {
     const history = useHistory();
 
     return <PrototypePage childClass='oefenscherm'>
-        <div className='h-100 d-flex flex-wrap justify-content-around align-items-center'>
+        <div className='h-100 d-flex flex-wrap justify-content-around column-smallscreen align-items-center'>
             {
                 oefeningen.map(oefening => {
                     return <div className='opdracht d-flex flex-column align-items-center' onClick={onClickAnalytics(() => history.push(`/prototype/${oefening.link}`), oefening.label)}>        

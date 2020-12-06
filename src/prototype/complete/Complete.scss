@@ -62,6 +62,14 @@
             box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.274);
         }
     }
+
+    @media only screen and (max-width: 400px) {
+        .column-smallscreen {
+          flex-direction: column;
+          flex-wrap: nowrap;
+          height: max-content !important;
+        }
+      }
 }
 
 .naResultaat {
