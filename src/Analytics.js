@@ -8,7 +8,7 @@ export const onClickAnalytics = (func, knopTitel) => {
     return () => {
         ReactGA.event({
             category: `${localStorage.getItem('userType') || 'gebruiker zonder type'} activiteiten`,
-            action: `Op pagina ${window.location.pathname} geklikt op de knop: ${knopTitel}`,
+            action: `Doelgroep: ${localStorage.getItem('userType') || 'gebruiker zonder type'}. Op pagina ${window.location.pathname} geklikt op de knop: ${knopTitel}`,
             label: '',
           });
         func();
@@ -29,14 +29,14 @@ export const Analytics = () => {
                 ReactGA.pageview(window.location.pathname);
                 ReactGA.event({
                     category: `${localStorage.getItem('userType') || 'gebruiker zonder type'} activiteiten`,
-                    action: `Naar pagina ${window.location.pathname}`,
+                    action: `Doelgroep: ${localStorage.getItem('userType') || 'gebruiker zonder type'}. Naar pagina ${window.location.pathname}`,
                   });
             } else {
                 setPathname('Home')
                 ReactGA.pageview('Home');
                 ReactGA.event({
                     category: `${localStorage.getItem('userType') || 'gebruiker zonder type'} activiteiten`,
-                    action: `Naar pagina ${window.location.pathname}`,
+                    action: `Doelgroep: ${localStorage.getItem('userType') || 'gebruiker zonder type'}. Naar pagina ${window.location.pathname}`,
                   });
             }
         })
@@ -51,14 +51,14 @@ export const Analytics = () => {
             ReactGA.pageview(window.location.pathname);
             ReactGA.event({
                 category: `${localStorage.getItem('userType') || 'gebruiker zonder type'} activiteiten`,
-                action: `Gestart op pagina ${window.location.pathname}`,
+                action: `Doelgroep: ${localStorage.getItem('userType') || 'gebruiker zonder type'}. Gestart op pagina ${window.location.pathname}`,
               });
         } else {
             setPathname('Home')
             ReactGA.pageview('Home');
             ReactGA.event({
                 category: `${localStorage.getItem('userType') || 'gebruiker zonder type'} activiteiten`,
-                action: `Gestart op pagina ${window.location.pathname}`,
+                action: `Doelgroep: ${localStorage.getItem('userType') || 'gebruiker zonder type'}. Gestart op pagina ${window.location.pathname}`,
               });
         }
     }, [])
