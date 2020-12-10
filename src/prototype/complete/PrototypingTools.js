@@ -41,5 +41,5 @@ export const PrototypePage = ({children, childClass}) => {
     return ((isTablet || isIPad13) && shouldTilt) || (!isTablet && !isIPad13) ? <div className='prototype-page-holder'><div style={{height, width, maxHeight: height, maxWidth: width}} className={`prototype-page ${childClass && childClass} scroll2`}><PrototypeHeader />{children}</div></div> : <div style={{height: '100vh', width: '100vw'}} className=' d-flex justify-content-center align-items-center'><span className='default-text'>Draai uw scherm een kwartslag</span></div>
 }
 
-export const Button = (props) => <button {...props}>{props.children}</button>; hallo kanker hond
+export const Button = (props) => <button {...props}>{props.children}</button>;
 export const PrototypeHeader = ({children}) => <div className='prototype-header'><span><MenuIcon style={{fontSize: '50px', marginTop: '10px'}} /></span>{children}</div>;
