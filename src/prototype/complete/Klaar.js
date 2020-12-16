@@ -8,7 +8,10 @@ export const Klaar = (props) => {
     const getRightForm = () => {
         if (localStorage.getItem('userType') && localStorage.getItem('userType') === 'inf'){
             console.log('run inf link')
-            return 'https://forms.gle/X6UArFuNesJngAFV7';
+            return 'https://forms.gle/CYbUqFP3Fs9DBoHC6';
+        }
+        else if (localStorage.getItem('userType') && localStorage.getItem('userType') === 'studenten'){
+            return 'https://forms.gle/kweZZ6mVzKDXjxJZ9';
         }
         else {
             console.log('run normal people link')
