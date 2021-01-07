@@ -29,7 +29,7 @@ export const Beginscherm = (props) => {
                 <Button onClick={onClickAnalytics(() => history.push(`/prototype/oefenscherm`), 'Oefenscherm')} className='mt-3 btn-small-text'>Oefenen</Button>
             </div>
             <div className=' h-100 p-5 bg-lightblue d-flex align-items-center'>
-                <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * (doneAmount / allOefeningen.length))]} className='zonnebloem'/>
+                <img className='downscale' src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * (doneAmount / allOefeningen.length))]} className='zonnebloem'/>
 
             </div>
         </div>

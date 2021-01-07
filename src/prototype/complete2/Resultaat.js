@@ -42,7 +42,7 @@ export const Resultaat = (props) => {
 
   return <PrototypePage childClass='resultaat'>
             <PrototypeHeader>
-            <a href='/prototype2/home' className='default-text-header-button'>Home <img src='/icons/Home-active.png' style={{maxWidth: '50px', maxHeight: '50px'}} /> </a>
+            <a href='/prototype2/home' className='default-text-header-button'><span style={{position:'relative', top: '1px'}}>Home</span> <img src='/icons/Home-active.png' style={{maxWidth: '50px', maxHeight: '50px'}} /> </a>
         </PrototypeHeader>
     <div className='d-flex flex-column h-100 justify-content-center align-items-center mb-5' style={{position: 'relative', top: '15px'}}>
       <div className='d-flex flex-column align-items-center mb-5 mt-5'>
@@ -52,7 +52,7 @@ export const Resultaat = (props) => {
       <PBar className='progress-bar mt-4' variant="determinate"  color='primary' value={getItem('firsttry') ? normalise(+getItem('firsttry') * 10) : 0} />
         </div>
       {/* <span className='mt-3 btn-small-text'>{`${(doneAmount * 100 / allOefeningen.length) === 100 ? (doneAmount * 100 / allOefeningen.length) : (doneAmount * 100 / allOefeningen.length).toPrecision(2)}%`}</span> */}
-      <span className='btn-default-text mt-5 pointer' onClick={onClickAnalytics(() => history.push({pathname: '/prototype2/naresultaat', search: history.location.search}), 'NaResultaat')}>Doorgaan <img style={{maxWidth:'45px', height: '45px'}} src='/icons/Pijl.png'/></span>
+      <span className='btn-default-text mt-5 pointer' style={{padding: '4px 10px'}} onClick={onClickAnalytics(() => history.push({pathname: '/prototype2/naresultaat', search: history.location.search}), 'NaResultaat')}>Doorgaan <img style={{maxWidth:'45px', height: '45px', marginLeft: '10px'}} src='/icons/Pijl.png'/></span>
     </div>
   </PrototypePage>
 }

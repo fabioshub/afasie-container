@@ -215,7 +215,7 @@ return <PrototypePage childClass='oefening'>
                                     setAlreadyClicked(prev => ({...prev, failed: true, [i]: true}))
                                 }
                             }
-                            return <div className={`placeholder d-flex justify-content-center align-items-center ${alreadyClicked[i] ? 'wrong' : ''} ${word === chosenWord && currentChosenWord === chosenWord ? 'correct' : ''}`} onClick={click} style={{ backgroundImage: `url(${roulette.find(r => r.word === word).img})` }}></div>;
+                            return <div className={`placeholder d-flex justify-content-center align-items-center ${alreadyClicked[i] ? 'wrong' : ''}  ${word !== chosenWord && currentChosenWord === chosenWord ? 'wrong' : ''} ${word === chosenWord && currentChosenWord === chosenWord ? 'correct' : ''}`} onClick={click} style={{ backgroundImage: `url(${roulette.find(r => r.word === word).img})` }}></div>;
                         })
                     }
                 </div> : <div style={{ height: '200px' }} className='w-100 d-flex justify-content-center align-items-center'><CircularProgress color="secondary" /></div>

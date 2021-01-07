@@ -41,7 +41,7 @@ export const Home = (props) => {
 
     return <PrototypePage childClass='home' style={{background: 'rgb(234,245,241)'}}>
         <PrototypeHeader>
-            <span className='default-text-header'>Home <img src='/icons/Home-inactive.png' style={{maxWidth: '50px', maxHeight: '50px'}} /> </span>
+            <span className='default-text-header'><span style={{position:'relative', top: '1px'}}>Home</span> <img src='/icons/Home-inactive.png' style={{maxWidth: '50px', maxHeight: '50px'}} /> </span>
         </PrototypeHeader>
         <div className='h-100 d-flex flex-column w-100 justify-content-center align-items-center'>
             <div className='w-100 d-flex justify-content-center mb-4'>

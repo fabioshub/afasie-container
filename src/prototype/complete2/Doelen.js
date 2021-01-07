@@ -26,16 +26,17 @@ export const Doelen = (props) => {
     }, [])
     return <PrototypePage childClass='beginscherm'>
         <PrototypeHeader>
-            <a href='/prototype2/home' className='default-text-header-button'>Home <img src='/icons/Home-active.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </a>
+            <a href='/prototype2/home' className='default-text-header-button'><span style={{position:'relative', top: '1px'}}>Home</span> <img src='/icons/Home-active.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </a>
+            <span className='default-text-header-button'>Nieuw doel <img src='/icons/Doelen.png' style={{ maxWidth: '50px', maxHeight: '50px', marginLeft: '8px' }} /></span>
         </PrototypeHeader>
-        <div className='d-flex h-100'>
+        <div className='d-flex h-100' style={{overflow:'hidden'}}>
             <div className='d-flex flex-column w-100 pl-5' style={{marginTop: '100px'}}>
                 <span className='title-text'>Doel</span>
                 <span style={{fontSize: '40px'}}>Luistervaardigheid verbeteren</span>
-                <Button onClick={onClickAnalytics(() => history.push(`/prototype2/oefening1`), 'Oefenscherm')} className='mt-3 btn-default-text'><span>Doorgaan</span><img style={{maxWidth: '40px', height: '40px', marginLeft: '10px'}} src='/icons/Pijl.png'/></Button>
+                <Button onClick={onClickAnalytics(() => history.push(`/prototype2/oefening1`), 'Oefenscherm')} className='mt-3 btn-default-text'><span>Oefenen</span><img style={{maxWidth: '40px', height: '40px', marginLeft: '10px'}} src='/icons/Pijl.png'/></Button>
             </div>
             <div className=' h-100 p-5 d-flex align-items-end'>
-                <img style={{position: 'relative', bottom: '40px'}} src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0)  / 100))]} className='zonnebloem'/>
+                <img style={{position: 'relative', bottom: '60px'}} src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0)  / 100))]} className='downscale zonnebloem'/>
             </div>
         </div>
     </PrototypePage>

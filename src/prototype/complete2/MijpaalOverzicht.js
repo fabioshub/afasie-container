@@ -42,9 +42,9 @@ const PBar2 = withStyles({
 })(LinearProgress);
 
 const mijlpalen = [
-    zonnebloemMiddel,
     zonnebloemGroot,
-    zonnebloemKlein,
+    zonnebloemGroot,
+    zonnebloemGroot,
     zonnebloemGroot
 ]
 
@@ -63,28 +63,27 @@ export const MijlpaalOverzicht = (props) => {
     }, [])
     return <PrototypePage childClass='mijlpaaloverzicht' style={{ background: 'rgb(234,245,241)' }}>
         <PrototypeHeader>
-            <a href='/prototype2/home' className='default-text-header-button'>Home <img src='/icons/Home-active.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </a>
-            <span className='default-text-header-button'>Nieuw doel <img src='/icons/Doelen.png' style={{ maxWidth: '50px', maxHeight: '50px', marginLeft: '8px' }} /></span>
+            <a href='/prototype2/home' className='default-text-header-button'><span style={{position:'relative', top: '1px'}}>Home</span> <img src='/icons/Home-active.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </a>
         </PrototypeHeader>
         <div className=' h-100 d-flex flex-column'>
             <div className='d-flex flex-column' style={{height: '90vh'}}>
             <div className='d-flex w-100 p-4' style={{
-                height: '85%',
-                background: 'url(/images/Achtergrond.png)',
-                backgroundSize: 'fill',
+                height: '80%',
+                background: 'url(/images/Achtergrond-klein.png)',
+                backgroundSize: 'cover',
                 backgroundPosition: 'center bottom',
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className='d-flex w-100 align-items-center p-4'>
-                    <div className='mr-3' style={{ height: '300px', width: '400px' }}>
-                        <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 100))]} style={{ maxWidth: '100%', maxHeight: '100%' }} />
-                    </div>
-                    <div className='d-flex flex-column w-100 p-3 h-100 '>
+                    <div className='d-flex flex-column p-3 h-100 w-100'>
                         <span className='title-text'>Doel</span>
                         {/* huidig doel programmeren */}
                         <span className='normal-big-text'>Luistervaardigheid</span>
                         <span className='normal-big-text mb-4'>Verbeteren</span>
                         <PBar1 variant="determinate" value={getItem('currentDoelPercentage') || 0} />
+                    </div>
+                    <div className='mr-3 h-100 d-flex align-items-end pb-3' style={{width: '600px'}}>
+                        <img className='downscale' src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 100))]} style={{ maxWidth: '100%', maxHeight: '100%', marginLeft: '20px' }} />
                     </div>
                 </div>
             </div>
@@ -103,7 +102,7 @@ export const MijlpaalOverzicht = (props) => {
                                         <span>Luistervaardigheid </span>
                                         <span>verbeteren</span>
                                         </div>
-                                <img src={m} className='placeholder'></img>
+                                <img src={m} className='downscale placeholder'></img>
                                 <div className='d-flex w-100' style={{position:'relative'}}>
                                 <span className='font-weight-bold w-100 h-100 d-flex justify-content-center align-items-center' style={{color: 'white', position:'absolute', top: '0', left: '0', zIndex: '10000'}}>100%</span>
 

@@ -29,7 +29,7 @@ export const Oefenscherm = (props) => {
 
     return <PrototypePage childClass='oefenscherm' style={{background: 'rgb(234,245,241)'}}>
         <PrototypeHeader>
-            <a href='/prototype2/home' className='default-text-header-button'>Home <img src='/icons/Home-active.png' style={{maxWidth: '50px', maxHeight: '50px'}} /> </a>
+            <a href='/prototype2/home' className='default-text-header-button'><span style={{position:'relative', top: '1px'}}>Home</span> <img src='/icons/Home-active.png' style={{maxWidth: '50px', maxHeight: '50px'}} /> </a>
         </PrototypeHeader>
               <div className='h-100 d-flex flex-column w-100 justify-content-center align-items-center'>
             <div className='w-100 d-flex justify-content-center mb-4'>

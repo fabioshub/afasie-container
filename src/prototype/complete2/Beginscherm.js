@@ -27,10 +27,10 @@ export const Beginscherm = (props) => {
         <div className='d-flex h-100 center align-items-center'>
             <div className='d-flex flex-column w-100 pl-5'>
                 <span className='title-text pb-3 mb-4'>Goedendag!</span>
-                <Button onClick={onClickAnalytics(() => history.push(`/prototype2/home`), 'Oefenscherm')} className='mt-3 btn-default-text'><span>Beginnen</span><img style={{maxWidth: '40px', height: '40px', marginLeft: '10px'}} src='/icons/Pijl.png'/></Button>
+                <Button onClick={onClickAnalytics(() => history.push(`/prototype2/home`), 'Oefenscherm')} className='mt-3 btn-default-text' style={{padding: '4px 10px'}}><span >Beginnen</span><img style={{maxWidth: '40px', height: '40px', marginLeft: '10px'}} src='/icons/Pijl.png'/></Button>
             </div>
             <div className=' h-100 p-5 d-flex align-items-end'>
-                <img style={{position: 'relative', bottom: '40px'}} src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 100))]} className='zonnebloem'/>
+                <img style={{position: 'relative', bottom: '40px', }} src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 100))]} className='downscale zonnebloem'/>
             </div>
         </div>
     </PrototypePage>

@@ -30,7 +30,7 @@ export const NaResultaat = (props) => {
     }, [])
     return <PrototypePage childClass='naResultaat'>
         <PrototypeHeader>
-            <a href='/prototype2/home' className='default-text-header-button'>Home <img src='/icons/Home-active.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </a>
+            <a href='/prototype2/home' className='default-text-header-button'><span style={{position:'relative', top: '1px'}}>Home</span> <img src='/icons/Home-active.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </a>
         </PrototypeHeader>
         <div className='d-flex h-100 justify-content-center align-items-center'>
             <div className='d-flex flex-column w-100 pl-5' style={{ position: 'relative', bottom: '60px' }} >
@@ -38,7 +38,7 @@ export const NaResultaat = (props) => {
                 <Button onClick={onClickAnalytics(() => history.push('/prototype2/oefenscherm'), 'Mijlpalenoverzicht')} className='btn-small-text mt-3 pr-4 pl-4 pt-1 pb-1'>Verder oefenen</Button>
             </div>
             <div className=' h-100 p-5 d-flex align-items-end'>
-                <img style={{ position: 'relative', bottom: '40px' }} src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0)  / 100))]} className='zonnebloem' />
+                <img style={{ position: 'relative', bottom: '60px' }} src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0)  / 100))]} className='downscale zonnebloem' />
             </div>
 
         </div>

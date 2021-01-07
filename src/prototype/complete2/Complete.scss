@@ -129,20 +129,32 @@
         border: 0px solid rgb(126,188,197);
         &.correct {
             border: 7px solid rgb(103,183,51);
-            transform: scale(1.2);
+            transform: scale(1.25);
 
             &:hover {
                 border: 7px solid rgb(103,183,51);
+                transform: scale(1.25);
             }
         }
         &.wrong {
             opacity: 0.4;
+
+            &:hover {
+                transform: none;
+                border: none;
+                cursor: default;
+            }
         }
         &:hover {
             border: 7px solid rgb(126,188,197);
+            transform: scale(1.06);
         }
     }
 
+}
+
+.downscale {
+    transform: scale(0.9);
 }
 
 .mijlpaaloverzicht {
