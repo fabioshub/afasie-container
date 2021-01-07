@@ -39,17 +39,18 @@ export const MijlpaalOverzicht = (props) => {
             return acc + 0;
         }, 0))
     }, [])
+    console.log(Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 10 / zonnebloemImages.length)), zonnebloemImages)
     return <PrototypePage childClass='mijlpaaloverzicht'>
         <div className=' h-100 d-flex flex-column mb-3'>
             <div className='w-100 d-flex justify-content-end pr-4'><span className='btn-small-text pointer' onClick={onClickAnalytics(() => history.push('/prototype/klaar'), 'Klaar')}>Volgende</span></div>
             <div className='d-flex w-100 p-4'>
                 <div className='d-flex w-100 align-items-center p-4 bg-lightblue'>
                     <div className='mr-3' style={{ height: '300px', width: '400px' }}>
-                    <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * (doneAmount / allOefeningen.length))]} style={{maxWidth: '100%', maxHeight: '100%'}} />
+                    <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 10 / zonnebloemImages.length))]} style={{maxWidth: '100%', maxHeight: '100%'}} />
                     </div>
                     <div className='d-flex flex-column w-100 p-3 h-100 justify-content-around'>
                         <span className='title-text'>Mijlpaal ...</span>
-                        <PBar variant="determinate" value={(doneAmount * 100 / allOefeningen.length) === 100 ? (doneAmount * 100 / allOefeningen.length) : (doneAmount * 100 / allOefeningen.length).toPrecision(2)} />
+                        <PBar variant="determinate" value={(getItem('currentDoelPercentage') || 0) } />
                     </div>
                 </div>
             </div>

@@ -28,6 +28,17 @@ import { NaResultaat } from './prototype/complete/NaResultaat';
 import { Oefening1, Oefening2, Oefening3, Oefening4, Oefening5, Oefening6 } from './prototype/complete/Oefening';
 import { Oefenscherm } from './prototype/complete/Oefenscherm';
 import { Resultaat } from './prototype/complete/Resultaat';
+
+import { Beginscherm as Beginscherm_2} from './prototype/complete2/Beginscherm';
+import { Klaar as Klaar_2} from './prototype/complete2/Klaar';
+import { MijlpaalOverzicht as MijlpaalOverzicht_2 } from './prototype/complete2/MijpaalOverzicht';
+import { NaResultaat as NaResultaat_2 } from './prototype/complete2/NaResultaat';
+import { Oefening1 as Oefening1_2, Oefening2 as Oefening2_2, Oefening3 as Oefening3_2, Oefening4 as Oefening4_2, Oefening5 as Oefening5_2, Oefening6 as Oefening6_2 } from './prototype/complete2/Oefening';
+import { Oefenscherm as Oefenscherm_2 } from './prototype/complete2/Oefenscherm';
+import { Resultaat as Resultaat_2 } from './prototype/complete2/Resultaat';
+import { Home } from './prototype/complete2/Home';
+import { Doelen } from './prototype/complete2/Doelen';
+
 import { Analytics } from './Analytics';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
@@ -38,7 +49,7 @@ function App() {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: '#F49445',
+        main: 'rgb(151,184,51)',
       },
       secondary: {
         main: '#7FBCC6'
@@ -75,7 +86,8 @@ function App() {
       {
         routes.map(route => {
           const Comp = route.component;
-          return <Route exact path={route.route}>
+          if (route.route.includes('prototype2')) {
+            return <div className='newP'><Route exact path={route.route}>
             {
               route.enableHeader && <AppBar position="static">
               <Toolbar>
@@ -87,6 +99,20 @@ function App() {
             }
             <Comp />
           </Route>
+          </div>
+          }
+          return <div className='oldP'><Route exact path={route.route}>
+          {
+            route.enableHeader && <AppBar position="static">
+            <Toolbar>
+              <Typography variant="h6">
+                {pathname}
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          }
+          <Comp />
+        </Route></div>
         })
       }
     </div>
@@ -101,6 +127,62 @@ const routes = [
     route: '/',
     component: StartScreen,
     enableHeader: true
+  },
+  {
+    route: '/prototype2/home',
+    component: Home,
+  },
+  {
+    route: '/prototype2',
+    component: Beginscherm_2,
+  },
+  {
+    route: '/prototype2/klaar',
+    component: Klaar_2,
+  },
+  {
+    route: '/prototype2/doelen',
+    component: Doelen,
+  },
+  {
+    route: '/prototype2/MijlpaalOverzicht',
+    component: MijlpaalOverzicht_2,
+  },
+  {
+    route: '/prototype2/naresultaat',
+    component: NaResultaat_2,
+  },
+  {
+    route: '/prototype2/oefening1',
+    component: Oefening1_2,
+  },
+  {
+    route: '/prototype2/oefening2',
+    component: Oefening2_2,
+  },
+  {
+    route: '/prototype2/oefening3',
+    component: Oefening3_2,
+  },
+  {
+    route: '/prototype2/oefening4',
+    component: Oefening4_2,
+  },
+  {
+    route: '/prototype2/oefening5',
+    component: Oefening5_2,
+  },
+  {
+    route: '/prototype2/oefening6',
+    component: Oefening6_2,
+  },
+  {
+    route: '/prototype2/oefenscherm',
+    component: Oefenscherm_2,
+  },
+  {
+    route: '/prototype2/resultaat',
+    component: Resultaat_2,
   },
   {
     route: '/prototype',

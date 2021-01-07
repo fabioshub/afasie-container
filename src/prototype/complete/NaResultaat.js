@@ -12,7 +12,7 @@ import { oefeningen as allOefeningen } from './Oefenscherm';
 import { onClickAnalytics } from '../../Analytics';
 import {useHistory} from 'react-router-dom';
 
-export const zonnebloemImages = [zonnebloem, zonnebloem1, zonnebloem2, zonnebloem3, zonnebloem4, zonnebloem5];
+export const zonnebloemImages = [zonnebloem1, zonnebloem2, zonnebloem3, zonnebloem4, zonnebloem5];
 
 export const NaResultaat = (props) => {
     const query = new URLSearchParams(useLocation().search)
@@ -35,7 +35,7 @@ export const NaResultaat = (props) => {
                 <Button onClick={onClickAnalytics(() => history.push('/prototype/mijlpaaloverzicht'), 'Mijlpalenoverzicht')} className='btn-small-text mt-3'>Bekijk alle planten</Button>
             </div>
             <div className=' h-100 p-5 bg-lightblue d-flex align-items-center'>
-                <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * (doneAmount / allOefeningen.length))]} className='zonnebloem' />
+                <img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0)  / allOefeningen.length))]} className='zonnebloem' />
             </div>
 
         </div>

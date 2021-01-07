@@ -1,6 +1,7 @@
 import React from 'react'; 
 import ReactDOM from 'react-dom';
 import './prototype/complete/Complete.scss';
+import './prototype/complete2/Complete.scss';
 import './index.css';
 import App from './App';
 import {
