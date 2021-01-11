@@ -54,8 +54,8 @@ export const NaResultaat = (props) => {
             <div className=' h-100 p-5 d-flex align-items-end' style={{ position: 'relative', width: '600px' }}>
                 {
                     getItem('currentDoelPercentage') && <>
-                        <motion.div style={{ position: 'absolute', bottom: '60px', left: '0' }} initial={{ opacity: 1 }} animate={{ opacity: 0, transition: { duration: 2, delay: 2.5 } }}><img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 100)) - 1]} className='downscale zonnebloem' /></motion.div>
-                        <motion.div style={{ position: 'absolute', bottom: '60px', left: '0' }} initial={{ opacity: 0 }} animate={{ opacity: 1, display: 'block', transition: { duration: 2, delay: 2.5 } }}><img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 100))]} className='downscale zonnebloem' /></motion.div>
+                        <motion.div style={{ position: 'absolute', bottom: '60px', left: '0' }} initial={{ opacity: 1 }} animate={{ opacity: 0, transition: { duration: 2, delay: 1.5 } }}><img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 100)) - 1]} className='downscale zonnebloem' /></motion.div>
+                        <motion.div style={{ position: 'absolute', bottom: '60px', left: '0' }} initial={{ opacity: 0 }} animate={{ opacity: 1, display: 'block', transition: { duration: 2, delay: 1.5 } }}><img src={zonnebloemImages[Math.ceil((zonnebloemImages.length - 1) * ((getItem('currentDoelPercentage') || 0) / 100))]} className='downscale zonnebloem' /></motion.div>
                     </>
                 }
             </div>
