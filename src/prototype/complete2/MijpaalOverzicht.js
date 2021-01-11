@@ -88,7 +88,11 @@ export const MijlpaalOverzicht = (props) => {
                 </div>
             </div>
             <div className='default-text-header-button inter-section ' style={{height: '15%'}}>
-                <span>Behaald <img src='/icons/Pijl.png' style={{ maxHeight: '40px', maxWidth: '40px', transform: 'rotate(90deg)'}}/></span>
+                <span onClick={() => window.scrollTo({
+  top: 2500, 
+  left: 0, 
+  behavior: 'smooth'
+})}>Behaald <img src='/icons/Pijl.png' style={{ maxHeight: '40px', maxWidth: '40px', transform: 'rotate(90deg)'}}/></span>
             </div>
             </div>
             <div>

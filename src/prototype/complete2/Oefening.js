@@ -179,6 +179,7 @@ const Exc = ({ oefeningType, correctlyMade, active, setPreviousChosenWord, previ
 return <PrototypePage childClass='oefening'>
         <PrototypeHeader style={{background: 'rgb(247, 247, 247)', padding: '20px 40px'}}>
             <a href='/prototype2/oefenscherm' className='default-text-header-button oefening'>Stop <img src='/icons/Stop.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </a>
+            <span className='default-text-header-button oefening'>Help<img src='/icons/Hint.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </span>
         </PrototypeHeader>
         <div className='d-flex flex-column h-100 justify-content-around'>
             <div className='d-flex flex-column mt-3 mb-3 p-2 default-text ml-5 mr-5'>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import {
   Route,
@@ -17,7 +17,6 @@ import Gevoel from './concepts/setup/Gevoel/Gevoel';
 import Mijlpaal from './concepts/setup/Mijlpaal/Mijlpaal';
 import MijlpaalVideo from './concepts/setup/Mijlpaal/MijlpaalVideo';
 import Prototype from './prototype/Prototype';
-import Instellingen from './prototype/Instellingen';
 import Planten from './prototype/Planten';
 import Achievements from './prototype/Achievements';
 import { Blij, Boos, G1, G2, G3, G4, Onverschillig, Verdrietig } from './concepts/setup/Gevoel/GevoelsOpties';
@@ -29,8 +28,8 @@ import { Oefening1, Oefening2, Oefening3, Oefening4, Oefening5, Oefening6 } from
 import { Oefenscherm } from './prototype/complete/Oefenscherm';
 import { Resultaat } from './prototype/complete/Resultaat';
 
-import { Beginscherm as Beginscherm_2} from './prototype/complete2/Beginscherm';
-import { Klaar as Klaar_2} from './prototype/complete2/Klaar';
+import { Beginscherm as Beginscherm_2 } from './prototype/complete2/Beginscherm';
+import { Klaar as Klaar_2 } from './prototype/complete2/Klaar';
 import { MijlpaalOverzicht as MijlpaalOverzicht_2 } from './prototype/complete2/MijpaalOverzicht';
 import { NaResultaat as NaResultaat_2 } from './prototype/complete2/NaResultaat';
 import { Oefening1 as Oefening1_2, Oefening2 as Oefening2_2, Oefening3 as Oefening3_2, Oefening4 as Oefening4_2, Oefening5 as Oefening5_2, Oefening6 as Oefening6_2 } from './prototype/complete2/Oefening';
@@ -38,6 +37,8 @@ import { Oefenscherm as Oefenscherm_2 } from './prototype/complete2/Oefenscherm'
 import { Resultaat as Resultaat_2 } from './prototype/complete2/Resultaat';
 import { Home } from './prototype/complete2/Home';
 import { Doelen } from './prototype/complete2/Doelen';
+import { Nieuwdoel } from './prototype/complete2/Nieuwdoel';
+import { Instellingen as I2 } from './prototype/complete2/Instellingen';
 
 import { Analytics } from './Analytics';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -81,41 +82,35 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
 
-    <div className="App scroll1"> 
-      <Analytics />
-      {
-        routes.map(route => {
-          const Comp = route.component;
-          if (route.route.includes('prototype2')) {
-            return <div className='newP'><Route exact path={route.route}>
-            {
-              route.enableHeader && <AppBar position="static">
-              <Toolbar>
-                <Typography variant="h6">
-                  {pathname}
-                </Typography>
-              </Toolbar>
-            </AppBar>
+      <div className="App scroll1">
+        <Analytics />
+        {
+          routes.map(route => {
+            const Comp = route.component;
+            if (route.route.includes('prototype2')) {
+              return <Route exact path={route.route}>
+                <div className='newP'>
+                  <Comp />
+                </div>
+              </Route>
             }
-            <Comp />
-          </Route>
-          </div>
-          }
-          return <div className='oldP'><Route exact path={route.route}>
-          {
-            route.enableHeader && <AppBar position="static">
-            <Toolbar>
-              <Typography variant="h6">
-                {pathname}
-              </Typography>
-            </Toolbar>
-          </AppBar>
-          }
-          <Comp />
-        </Route></div>
-        })
-      }
-    </div>
+            return <Route exact path={route.route}>
+              <div className='oldP'>
+                {
+                  route.enableHeader && <AppBar position="static">
+                    <Toolbar>
+                      <Typography variant="h6">
+                        {pathname}
+                      </Typography>
+                    </Toolbar>
+                  </AppBar>
+                }
+                <Comp />
+              </div>
+            </Route>
+          })
+        }
+      </div>
     </ThemeProvider>
   );
 }
@@ -147,6 +142,14 @@ const routes = [
   {
     route: '/prototype2/MijlpaalOverzicht',
     component: MijlpaalOverzicht_2,
+  },
+  {
+    route: '/prototype2/nieuwdoel',
+    component: Nieuwdoel,
+  },
+  {
+    route: '/prototype2/instellingen',
+    component: I2,
   },
   {
     route: '/prototype2/naresultaat',
@@ -250,11 +253,6 @@ const routes = [
   {
     route: '/concepten/prijzenkast',
     component: Achievements,
-    enableHeader: true
-  },
-  {
-    route: '/concepten/instellingen',
-    component: Instellingen,
     enableHeader: true
   },
   {

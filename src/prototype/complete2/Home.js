@@ -32,7 +32,7 @@ const menuItems2 = [
     },
     {
         label: 'Instellingen',
-        link: 'home',
+        link: 'instellingen',
         icon: '/icons/Instellingen.png'
     },
 ]

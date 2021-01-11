@@ -1,4 +1,7 @@
-.newP {.signal-border {
+.newP {
+    position: relative;
+    
+    .signal-border {
     border: 1px dashed black !important;
 }
 
@@ -16,16 +19,46 @@
 }
 
 .prototype-page-holder {
+    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    border-radius: 5px;
+}
+
+.prototype-tablet {
+    transform: scale(0.9);
+}
+
+.instellingen {
+    .text-def {
+        font-size: 21px;
+        font-weight: 600;
+        color: rgb(92, 92, 92);
+    }
+    .block-holder {
+        .block {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 105px;
+            // min-width: 150px;
+            margin-right: 90px;
+
+
+        }
+    }
+
 }
 
 .prototype-page {
+    background: white;
     overflow: auto;
+    transform: scale(0.9);
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.11);

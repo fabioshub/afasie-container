@@ -27,7 +27,7 @@ export const Doelen = (props) => {
     return <PrototypePage childClass='beginscherm'>
         <PrototypeHeader>
             <a href='/prototype2/home' className='default-text-header-button'><span style={{position:'relative', top: '1px'}}>Home</span> <img src='/icons/Home-active.png' style={{ maxWidth: '50px', maxHeight: '50px' }} /> </a>
-            <span className='default-text-header-button'>Nieuw doel <img src='/icons/Doelen.png' style={{ maxWidth: '50px', maxHeight: '50px', marginLeft: '8px' }} /></span>
+            <a href='/prototype2/nieuwdoel' className='default-text-header-button'>Nieuw doel <img src='/icons/Doelen.png' style={{ maxWidth: '50px', maxHeight: '50px', marginLeft: '8px' }} /></a>
         </PrototypeHeader>
         <div className='d-flex h-100' style={{overflow:'hidden'}}>
             <div className='d-flex flex-column w-100 pl-5' style={{marginTop: '100px'}}>
