@@ -63,9 +63,9 @@ export const Instellingen = (props) => {
                         <div style={{  minHeight: '60px', maxWidth: '60px', maxHeight: '60px', overflow: 'hidden' }} className='pointer' onClick={() => setActiveVoorlezen(prev => prev === 1 ? 0 : 1)}>
                             
                             {
-                                activeVoorlezen === 0 ? <img src='/icons/sound.png' style={{ maxWidth: '60px', maxHeight: '60px' }} />
+                                activeVoorlezen === 0 ? <img src='/icons/Sound.png' style={{ maxWidth: '60px', maxHeight: '60px' }} />
                                     :
-                                    <img src='/icons/soundOff.png' style={{ maxWidth: '60px', maxHeight: '60px' }} />
+                                    <img src='/icons/SoundOff.png' style={{ maxWidth: '60px', maxHeight: '60px' }} />
                             }
                         </div>
                     </div>
@@ -75,9 +75,9 @@ export const Instellingen = (props) => {
                     <div className=''>
                         <div style={{minHeight: '60px', maxWidth: '80px', maxHeight: '60px', overflow: 'hidden' }} className='pointer' onClick={() => setActiveColorToggle(prev => prev === 1 ? 0 : 1)}>
                             {
-                                activeColorToggle === 1 ? <img src='/icons/switchOff.png' style={{ maxWidth: '80px', maxHeight: '60px' }} />
+                                activeColorToggle === 1 ? <img src='/icons/SwitchOff.png' style={{ maxWidth: '80px', maxHeight: '60px' }} />
                                     :
-                                    <img src='/icons/switchOn.png' style={{ maxWidth: '80px', maxHeight: '60px' }} />
+                                    <img src='/icons/SwitchOn.png' style={{ maxWidth: '80px', maxHeight: '60px' }} />
                             }
                         </div>
                     </div>

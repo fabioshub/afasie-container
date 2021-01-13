@@ -13,14 +13,17 @@ export const oefeningen = [
     {
         label: 'Spreken',
         link: 'oefening2',
+        img: <img style={{maxWidth: '250px', height: '170px', marginTop: '5px'}} src='/images/FotoSpreken.png' />
     },
     {
         label: 'Woordzoeker',
         link: 'oefening3',
+        img: <img style={{maxWidth: '250px', height: '170px', marginTop: '5px'}} src='/images/WoordSpreken.png' />
     },
     {
         label: 'Luister + woord',
         link: 'oefening4',
+        img: <img style={{maxWidth: '250px', height: '170px', marginTop: '5px'}} src='/images/LuisterSchrijven.png' />
     }
 ];
 
@@ -48,7 +51,7 @@ export const Oefenscherm = (props) => {
                 oefeningen.slice(2, 4).map(item => {
                     return <div className='d-flex flex-column align-items-center pb-2 mr-4 ml-4 pointer' style={{backgroundColor: 'white', width: '280px', height: '230px', boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.174)'}} onClick={onClickAnalytics(() => history.push(`/prototype2/${item.link}`), item.label)}>        
                         <span className='default-text-header-button w-100 p-2 d-flex justify-content-center'>{item.label}</span>
-                        <img src={item.icon}/>
+                        {item.img}
                     </div>
                 })
             }
